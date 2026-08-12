@@ -1,0 +1,10 @@
+# Optional speed boost for the exact matcher (V1) — the code auto-detects
+# and falls back to a pure-Python matcher if this can't be installed
+# (e.g. no pre-built wheel for your Python version/platform yet).
+# Comment this line out entirely if `pip install` fails on it — everything
+# still works without it.
+pyahocorasick>=2.1.0
+
+# dev/test only
+pytest>=8.0.0
+pytest-asyncio>=0.24.0

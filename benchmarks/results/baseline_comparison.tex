@@ -1,0 +1,14 @@
+\begin{table}[t]
+\centering
+\caption{ProvProxy vs.\ non-provenance-aware baselines on the same fixture set.}
+\label{tab:baseline_comparison}
+\begin{tabular}{lrr}
+\toprule
+approach & detection\_rate & false\_positive\_rate \\
+\midrule
+Stateless pattern matcher & 0.250 & 0.400 \\
+DLP-only gateway (transform-aware, no provenance) & 0.500 & 0.400 \\
+ProvProxy (V3, enforcement) & 0.750 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

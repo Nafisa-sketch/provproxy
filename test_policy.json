@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "active_tier": "v1",
+  "server_bindings": [
+    {
+      "server_id": "test-server",
+      "tool_capabilities": {
+        "read_file": {
+          "blocked_paths": ["/home/user/.ssh/*"]
+        },
+        "http_request": {
+          "allowed_domains": ["api.github.com"]
+        }
+      }
+    }
+  ],
+  "enforcement": {
+    "on_match": "block",
+    "approval_timeout_seconds": 5
+  }
+}
