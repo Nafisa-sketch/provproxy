@@ -79,3 +79,39 @@ def test_v3_tier_never_reaches_v4_cross_call_logic():
     # independently at V3, so none should match (V3's own intra-request
     # reconstruction only helps when fragments arrive in the SAME call).
     assert not any(r.matched for r in results)
+
+
+def test_v4_optional_review_threshold_holds_before_hard_detection_threshold():
+    from provproxy.config import CrossCallWindowConfig
+
+    policy = PolicyFile(
+        version="test-review",
+        active_tier=AblationTier.V4,
+        approx_matching=ApproxMatchingConfig(ngram_size=4, coverage_threshold=0.6),
+        decode_limits=DecodeLimits(),
+        cross_call_window=CrossCallWindowConfig(review_threshold=0.30),
+    )
+    session = Session(session_id="s-review", policy=policy, ttl_seconds=300)
+    session.register_sensitive_fragment("frag-1", SECRET)
+
+    results = []
+    for i, chunk in enumerate([SECRET[j:j+3] for j in range(0, len(SECRET), 3)]):
+        r = pipeline.evaluate(
+            policy,
+            session,
+            f"part{i}={chunk}",
+            policy.decode_limits,
+            destination_allowed=False,
+            destination_domain="attacker.example",
+        )
+        results.append(r)
+        if r.enforcement_blocked:
+            break
+
+    first_stop = results[-1]
+    assert first_stop.review_required is True
+    assert first_stop.matched is False
+    assert first_stop.matched_via == "cross-call-review"
+    assert first_stop.enforcement_blocked is True
+    assert first_stop.approx_coverage is not None
+    assert 0.30 <= first_stop.approx_coverage < 0.60

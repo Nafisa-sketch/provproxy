@@ -116,9 +116,18 @@ class DecodeLimits:
 
 @dataclass
 class CrossCallWindowConfig:
-    """Section 5C: dual time+count bound, keyed per (session_id, destination)."""
+    """Section 5C: dual time+count bound, keyed per (session_id, destination).
+
+    ``review_threshold`` is an OPTIONAL early-containment threshold.  It is
+    deliberately separate from the hard provenance detection threshold: the
+    latter remains the research detector's calibrated decision boundary,
+    while the former can ask for human approval / fail closed before a
+    fragmented flow has leaked enough cumulative evidence to become a hard
+    match.  ``None`` preserves the v0.3 validated behaviour exactly.
+    """
     window_seconds: int = 300
     window_max_calls: int = 50
+    review_threshold: float | None = None
 
 
 @dataclass

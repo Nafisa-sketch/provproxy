@@ -20,6 +20,11 @@ class TierResult:
     matched_via: Optional[str] = None  # "exact" | "exact-decoded" | "approximate"
     matched_fragment_id: Optional[str] = None
     approx_coverage: Optional[float] = None
+    # Optional V4 early-containment signal. This is NOT counted as a hard
+    # provenance match; it means cumulative source-bound evidence crossed a
+    # lower policy threshold and the request should be held for approval (or
+    # fail closed if no approval path is available).
+    review_required: bool = False
     # V0 integration (fixes the B5 gap the evaluation harness surfaced):
     # `matched` is the pure detection signal — did the payload contain
     # provenance-linked content? — kept independent of destination so it
@@ -82,9 +87,11 @@ def evaluate(
     result = _evaluate_detection(policy, session, payload_text, decode_limits, destination_domain)
     result.destination_allowed = destination_allowed
 
-    if result.matched:
+    if result.matched or result.review_required:
         # Fail-closed: if destination_allowed wasn't determined (None),
-        # treat it the same as "not allowed" — a match blocks by default.
+        # treat it the same as "not allowed". A hard match blocks; an early
+        # review signal is held pending approval and therefore also does not
+        # forward on an untrusted/unknown destination.
         result.enforcement_blocked = not bool(destination_allowed)
     else:
         result.enforcement_blocked = False
@@ -178,6 +185,21 @@ def _evaluate_detection(
                     matched_via="cross-call",
                     matched_fragment_id=fragment_id,
                     approx_coverage=coverage_after,
+                )
+
+            review_threshold = policy.cross_call_window.review_threshold
+            if (
+                review_threshold is not None
+                and 0.0 < review_threshold < threshold
+                and coverage_before < review_threshold <= coverage_after
+            ):
+                return TierResult(
+                    tier=tier.value,
+                    matched=False,
+                    matched_via="cross-call-review",
+                    matched_fragment_id=fragment_id,
+                    approx_coverage=coverage_after,
+                    review_required=True,
                 )
 
     return TierResult(tier=tier.value, matched=False)

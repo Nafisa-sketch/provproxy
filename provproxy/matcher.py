@@ -44,6 +44,13 @@ except ImportError:
 # without a floor, trivially short/common substrings (a single space, a
 # comma) would spuriously "match" almost any registered source.
 _MIN_REVERSE_MATCH_LEN = 8
+# A reverse substring must also cover a meaningful fraction of the registered
+# source. This prevents generic prefixes such as "SYNTHETIC" from being
+# treated as exact provenance merely because they happen to occur inside a
+# longer sensitive source. 30% preserves useful snippet detection (e.g. one
+# substantial line cut from a larger secret-bearing file) while rejecting
+# small/common overlaps.
+_MIN_REVERSE_SOURCE_COVERAGE = 0.30
 
 # Same delimiter set as decode.py's candidate extractor — a real-world
 # payload is rarely JUST the secret; it's usually a secret sitting inside
@@ -122,10 +129,14 @@ class MatcherSnapshot:
                 if fragment_id in seen_fragment_ids:
                     continue
                 for candidate in candidates:
-                    if candidate and candidate in pattern:
-                        results.append(MatchResult(matched_fragment_id=fragment_id, matched_pattern=candidate))
-                        seen_fragment_ids.add(fragment_id)
-                        break
+                    if not candidate or candidate not in pattern:
+                        continue
+                    source_coverage = len(candidate) / len(pattern) if pattern else 0.0
+                    if source_coverage < _MIN_REVERSE_SOURCE_COVERAGE:
+                        continue
+                    results.append(MatchResult(matched_fragment_id=fragment_id, matched_pattern=candidate))
+                    seen_fragment_ids.add(fragment_id)
+                    break
 
         return results
 

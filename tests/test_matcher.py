@@ -55,3 +55,14 @@ def test_reverse_match_has_a_minimum_length_floor():
     # registered source — the length floor exists specifically to stop
     # this from counting as a match.
     assert snap.scan("a") == []
+
+
+def test_reverse_match_rejects_small_common_prefix_of_sensitive_source():
+    sm = SessionMatcher(ttl_seconds=300)
+    secret = "SYNTHETIC_MCP_SECRET_7F4A91C2D8E5B603"
+    sm.register_fragment("frag-1", secret)
+    snap = sm.current_snapshot()
+    # This is long enough to pass the absolute 8-char floor, but covers only
+    # ~24% of the source and is a generic/common prefix rather than strong
+    # provenance evidence.
+    assert snap.scan("SYNTHETIC build token status MCP retries") == []
