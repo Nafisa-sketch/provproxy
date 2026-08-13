@@ -106,7 +106,32 @@ class CrossCallWindow:
             union |= _ngrams(entry.value_text, ngram_size)
         union_coverage = len(source_ngrams & union) / len(source_ngrams)
 
-        return max(ordered_coverage, union_coverage)
+        # Order-independent positional coverage.  Each window is already
+        # scoped to one registered sensitive source, so short fragments
+        # that are exact substrings of that source can contribute weak
+        # evidence even when they are shorter than ngram_size or arrive
+        # out of order.  We count UNIQUE source character positions, not
+        # call count, so replaying the same fragment cannot inflate
+        # coverage (duplicate-evidence resistance).
+        covered_positions: set[int] = set()
+        source_len = len(source_text)
+        for entry in self._entries:
+            piece = entry.value_text
+            if not piece:
+                continue
+            start = 0
+            while True:
+                idx = source_text.find(piece, start)
+                if idx < 0:
+                    break
+                covered_positions.update(range(idx, min(idx + len(piece), source_len)))
+                start = idx + 1
+
+        positional_coverage = (
+            len(covered_positions) / source_len if source_len else 0.0
+        )
+
+        return max(ordered_coverage, union_coverage, positional_coverage)
 
     def __len__(self) -> int:
         return len(self._entries)

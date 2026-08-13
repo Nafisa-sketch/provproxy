@@ -1,0 +1,318 @@
+{"category": "A_fragment_size", "case_id": "cs2_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs2_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs3_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs4_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs5_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs6_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs7_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs8_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 8, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs9_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 9, "num_chunks": 4, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs10_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 10, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs11_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 11, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "A_fragment_size", "case_id": "cs12_t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 12, "num_chunks": 3, "secret_len": 28}}
+{"category": "B_reordered_fragments", "case_id": "t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 2, "num_chunks": 14, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t10", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 6, "num_chunks": 5, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t11", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t12", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t13", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t14", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t15", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 4, "num_chunks": 7, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t16", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 5, "num_chunks": 6, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t17", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "mode": "shuffle"}}
+{"category": "B_reordered_fragments", "case_id": "t18", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 3, "num_chunks": 10, "mode": "reverse"}}
+{"category": "B_reordered_fragments", "case_id": "t19", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "num_chunks": 4, "mode": "shuffle"}}
+{"category": "C_unequal_fragmentation", "case_id": "t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [5, 4, 3, 5, 8, 3], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [7, 6, 2, 5, 6, 2], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [8, 5, 8, 4, 3], "num_chunks": 5}}
+{"category": "C_unequal_fragmentation", "case_id": "t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [6, 3, 6, 4, 8, 1], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [7, 8, 8, 5], "num_chunks": 4}}
+{"category": "C_unequal_fragmentation", "case_id": "t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [5, 8, 6, 6, 3], "num_chunks": 5}}
+{"category": "C_unequal_fragmentation", "case_id": "t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [4, 6, 7, 2, 7, 2], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [4, 3, 6, 6, 8, 1], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [6, 8, 4, 6, 3, 1], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [7, 7, 3, 8, 3], "num_chunks": 5}}
+{"category": "C_unequal_fragmentation", "case_id": "t10", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [8, 3, 4, 5, 5, 3], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t11", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [5, 3, 3, 3, 8, 6], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t12", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [6, 3, 5, 6, 2, 6], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t13", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [4, 5, 4, 4, 3, 8], "num_chunks": 6}}
+{"category": "C_unequal_fragmentation", "case_id": "t14", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [6, 3, 2, 8, 5, 2, 2], "num_chunks": 7}}
+{"category": "C_unequal_fragmentation", "case_id": "t15", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [6, 2, 3, 3, 4, 7, 3], "num_chunks": 7}}
+{"category": "C_unequal_fragmentation", "case_id": "t16", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [2, 8, 8, 5, 5], "num_chunks": 5}}
+{"category": "C_unequal_fragmentation", "case_id": "t17", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [8, 5, 8, 3, 4], "num_chunks": 5}}
+{"category": "C_unequal_fragmentation", "case_id": "t18", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [6, 8, 4, 5, 5], "num_chunks": 5}}
+{"category": "C_unequal_fragmentation", "case_id": "t19", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_lengths": [4, 4, 2, 7, 7, 4], "num_chunks": 6}}
+{"category": "D_duplicate_evidence", "case_id": "t0", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t1", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t2", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t3", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t4", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t5", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t6", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t7", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t8", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "D_duplicate_evidence", "case_id": "t9", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"repeats": 30, "weak_fragment_length": 4}}
+{"category": "E_interleaving", "case_id": "t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "E_interleaving", "case_id": "t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"chunk_size": 7, "benign_calls": 4, "benign_matched_count": 0, "benign_blocked_count": 0}}
+{"category": "F_destination_isolation", "case_id": "t0", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t1", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t2", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t3", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t4", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t5", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t6", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t7", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t8", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "F_destination_isolation", "case_id": "t9", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t0", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t1", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t2", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t3", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t4", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t5", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t6", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t7", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t8", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "G_session_isolation", "case_id": "t9", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"num_chunks": 4}}
+{"category": "H_ttl_inside_window", "case_id": "t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"ttl_seconds": 2}}
+{"category": "H_ttl_expired_evidence_excluded", "case_id": "t0", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"ttl_seconds": 2, "chunks_before_expiry": 2, "chunks_after_expiry": 2}}
+{"category": "H_ttl_inside_window", "case_id": "t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"ttl_seconds": 2}}
+{"category": "H_ttl_expired_evidence_excluded", "case_id": "t1", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"ttl_seconds": 2, "chunks_before_expiry": 2, "chunks_after_expiry": 2}}
+{"category": "H_ttl_inside_window", "case_id": "t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"ttl_seconds": 2}}
+{"category": "H_ttl_expired_evidence_excluded", "case_id": "t2", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"ttl_seconds": 2, "chunks_before_expiry": 2, "chunks_after_expiry": 2}}
+{"category": "I_transform_fragment", "case_id": "base64-0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "base64", "chunk_size": 4, "num_chunks": 7}}
+{"category": "I_transform_fragment", "case_id": "base64-1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "base64", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "base64-2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "base64", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "base64-3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "base64", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "base64-4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "base64", "chunk_size": 4, "num_chunks": 7}}
+{"category": "I_transform_fragment", "case_id": "base64-5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "base64", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "base64-6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "base64", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "base64-7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "base64", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "hex-0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "hex", "chunk_size": 7, "num_chunks": 4}}
+{"category": "I_transform_fragment", "case_id": "hex-1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "hex", "chunk_size": 4, "num_chunks": 7}}
+{"category": "I_transform_fragment", "case_id": "hex-2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "hex", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "hex-3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "hex", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "hex-4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "hex", "chunk_size": 7, "num_chunks": 4}}
+{"category": "I_transform_fragment", "case_id": "hex-5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "hex", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "hex-6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "hex", "chunk_size": 4, "num_chunks": 7}}
+{"category": "I_transform_fragment", "case_id": "hex-7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "hex", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "url-0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "url", "chunk_size": 7, "num_chunks": 4}}
+{"category": "I_transform_fragment", "case_id": "url-1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "url", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "url-2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "url", "chunk_size": 4, "num_chunks": 7}}
+{"category": "I_transform_fragment", "case_id": "url-3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "url", "chunk_size": 7, "num_chunks": 4}}
+{"category": "I_transform_fragment", "case_id": "url-4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "url", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "url-5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "url", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "url-6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "url", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "url-7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "url", "chunk_size": 4, "num_chunks": 7}}
+{"category": "I_transform_fragment", "case_id": "json-0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "json", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "json-1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "json", "chunk_size": 5, "num_chunks": 6}}
+{"category": "I_transform_fragment", "case_id": "json-2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "json", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "json-3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "json", "chunk_size": 4, "num_chunks": 7}}
+{"category": "I_transform_fragment", "case_id": "json-4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "json", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "json-5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "json", "chunk_size": 6, "num_chunks": 5}}
+{"category": "I_transform_fragment", "case_id": "json-6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "json", "chunk_size": 7, "num_chunks": 4}}
+{"category": "I_transform_fragment", "case_id": "json-7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"mode": "json", "chunk_size": 7, "num_chunks": 4}}
+{"category": "J_nested_json", "case_id": "t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t10", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t11", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t12", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t13", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "J_nested_json", "case_id": "t14", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"num_chunks": 6}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-0", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-1", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-2", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-3", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-4", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-5", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-6", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-7", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-8", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.10-9", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.1, "chars_sent": 3, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-0", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-1", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-2", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-3", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-4", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-5", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-6", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-7", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-8", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.25-9", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.25, "chars_sent": 7, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-0", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-1", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-2", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-3", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-4", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-5", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-6", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-7", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-8", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.50-9", "expected_detectable": null, "matched": false, "enforcement_blocked": false, "detail": {"fraction": 0.5, "chars_sent": 14, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "0.75-9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 0.75, "chars_sent": 21, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "K_partial_exfiltration", "case_id": "1.00-9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"fraction": 1.0, "chars_sent": 28, "source_len": 28}}
+{"category": "L_multiple_sources", "case_id": "t0", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t1", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t2", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t3", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t4", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t5", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t6", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t7", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t8", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "L_multiple_sources", "case_id": "t9", "expected_detectable": true, "matched": true, "enforcement_blocked": true, "detail": {"caught_source_ids": ["source-a", "source-b"], "expected_source_count": 2}}
+{"category": "M_common_substring_hard_negative", "case_id": "t0", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 3, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t1", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 3, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t2", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 5, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t3", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 4, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t4", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 5, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t5", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 5, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t6", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 4, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t7", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 3, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t8", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 5, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t9", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 4, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t10", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 3, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t11", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 6, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t12", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 4, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t13", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 3, "coverage": null}}
+{"category": "M_common_substring_hard_negative", "case_id": "t14", "expected_detectable": false, "matched": false, "enforcement_blocked": false, "detail": {"overlap_len": 6, "coverage": null}}

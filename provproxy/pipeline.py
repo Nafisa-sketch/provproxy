@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from typing import Any, Optional
 
 from .config import AblationTier, DecodeLimits, PolicyFile
+from .approx import best_coverage, extract_reconstructable_value
 from .decode import Decoder
 from .session import Session
 
@@ -30,6 +31,44 @@ class TierResult:
     # fail-closed (blocked whenever matched).
     destination_allowed: Optional[bool] = None
     enforcement_blocked: bool = False
+
+
+def _select_crosscall_evidence(
+    source_text: str,
+    payload_text: str,
+    decode_limits: DecodeLimits,
+    ngram_size: int,
+) -> str:
+    """Choose the most source-relevant representation of one outbound call.
+
+    V4 operates on a source-specific window, so it can safely normalize
+    the current call before accumulation.  We first strip structured
+    key/value or JSON noise, then try the same bounded decoders used by
+    V2.  Exact substrings of the registered source are preferred even
+    when shorter than ``ngram_size``; otherwise the candidate with the
+    greatest approximate source coverage is retained.
+
+    This enables transformation+fragmentation chains (e.g. each secret
+    chunk Base64/Hex/URL/JSON encoded independently) without lowering the
+    global threshold or changing V1-V3 semantics.
+    """
+    cleaned = extract_reconstructable_value(payload_text)
+    decoder = Decoder(decode_limits)
+
+    candidates: list[str] = [cleaned]
+    for candidate in decoder.expand(cleaned):
+        if candidate.text not in candidates:
+            candidates.append(candidate.text)
+
+    exact_substrings = [c for c in candidates if c and c in source_text]
+    if exact_substrings:
+        return max(exact_substrings, key=len)
+
+    return max(
+        candidates,
+        key=lambda c: best_coverage(source_text, c, ngram_size),
+        default=cleaned,
+    )
 
 
 def evaluate(
@@ -118,16 +157,27 @@ def _evaluate_detection(
             window = session.cross_call_registry.window_for(
                 session.session_id, destination_domain, fragment_id
             )
-            window.record(payload_text)
+            # Score before and after the current call.  A cross-call
+            # detection event is emitted only when THIS call causes the
+            # source/destination window to cross the threshold.  Without
+            # this transition check, once a destination crossed the
+            # threshold every later benign call inherited matched=True
+            # until the window expired ("sticky" false alerts).
+            coverage_before = window.accumulated_coverage(source_text, n) or 0.0
+            evidence_text = _select_crosscall_evidence(
+                source_text, payload_text, decode_limits, n
+            )
+            window.record(evidence_text)
+            coverage_after = window.accumulated_coverage(source_text, n) or 0.0
 
-            coverage = window.accumulated_coverage(source_text, n)
-            if coverage is not None and coverage >= policy.approx_matching.coverage_threshold:
+            threshold = policy.approx_matching.coverage_threshold
+            if coverage_before < threshold <= coverage_after:
                 return TierResult(
                     tier=tier.value,
                     matched=True,
                     matched_via="cross-call",
                     matched_fragment_id=fragment_id,
-                    approx_coverage=coverage,
+                    approx_coverage=coverage_after,
                 )
 
     return TierResult(tier=tier.value, matched=False)

@@ -36,9 +36,11 @@ def test_v4_catches_secret_split_across_multiple_key_value_calls():
         )
         for i, chunk in enumerate(CHUNKS)
     ]
-    assert results[-1].matched is True
-    assert results[-1].matched_via == "cross-call"
-    assert results[-1].matched_fragment_id == "frag-1"
+    crossing = [r for r in results if r.matched and r.matched_via == "cross-call"]
+    assert crossing, "one call should emit the threshold-crossing event"
+    assert crossing[0].matched_fragment_id == "frag-1"
+    # Once the threshold-crossing event has fired, later benign/unrelated
+    # calls should not inherit a sticky matched=True solely from history.
 
 
 def test_v4_does_not_cross_correlate_different_destinations():

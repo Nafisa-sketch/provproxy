@@ -28,6 +28,7 @@ inflate coverage for content that was never actually a value fragment.
 """
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass
 
@@ -40,12 +41,47 @@ def ngrams(s: str, n: int) -> set[str]:
     return {s[i : i + n] for i in range(len(s) - n + 1)}
 
 
+def _json_string_leaves(value) -> list[str]:
+    """Return JSON string leaves in document order.
+
+    Keys are deliberately excluded: provenance should be reconstructed
+    from transmitted values, not from schema/field-name text.
+    """
+    out: list[str] = []
+    if isinstance(value, str):
+        out.append(value)
+    elif isinstance(value, list):
+        for item in value:
+            out.extend(_json_string_leaves(item))
+    elif isinstance(value, dict):
+        for item in value.values():
+            out.extend(_json_string_leaves(item))
+    return out
+
+
 def extract_reconstructable_value(text: str) -> str:
-    """Extract `key=value`-shaped values from `text` and concatenate them
-    in order, with delimiters/field-name noise stripped. Falls back to
-    the text unchanged if no `key=value` pattern is present, so behavior
-    for payloads without this structure (free text, already-clean
-    content) is unaffected."""
+    """Return a bounded logical value stream for structured payloads.
+
+    Two common structures are supported without inventing content:
+
+    1. Valid JSON: concatenate string *values* in document order.
+    2. ``key=value`` text: concatenate captured values in order.
+
+    Free text falls back unchanged.  This lets V3/V4 recover provenance
+    split across fields while avoiding arbitrary concatenation of
+    unrelated field names and punctuation.
+    """
+    stripped = text.strip()
+    if stripped and stripped[0] in "[{":
+        try:
+            parsed = json.loads(stripped)
+        except (json.JSONDecodeError, TypeError):
+            parsed = None
+        if parsed is not None:
+            leaves = _json_string_leaves(parsed)
+            if leaves:
+                return "".join(leaves)
+
     values = _KV_VALUE_RE.findall(text)
     return "".join(values) if values else text
 
