@@ -170,12 +170,12 @@ def _evaluate_detection(
             # this transition check, once a destination crossed the
             # threshold every later benign call inherited matched=True
             # until the window expired ("sticky" false alerts).
-            coverage_before = window.accumulated_coverage(source_text, n) or 0.0
             evidence_text = _select_crosscall_evidence(
                 source_text, payload_text, decode_limits, n
             )
-            window.record(evidence_text)
-            coverage_after = window.accumulated_coverage(source_text, n) or 0.0
+            coverage_before, coverage_after = window.record_and_measure(
+                evidence_text, source_text, n
+            )
 
             threshold = policy.approx_matching.coverage_threshold
             if coverage_before < threshold <= coverage_after:

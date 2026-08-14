@@ -39,6 +39,7 @@ Window semantics (Section 5C):
 from __future__ import annotations
 
 import time
+import threading
 from collections import deque
 from dataclasses import dataclass, field
 
@@ -66,31 +67,57 @@ class CrossCallWindow:
     def __init__(self, config: CrossCallWindowConfig):
         self.config = config
         self._entries: deque[_WindowEntry] = deque()
+        self._lock = threading.RLock()
 
     def record(self, payload_text: str) -> None:
-        """Record one call's raw payload text. Evidence extraction
-        (key=value reconstruction) happens here, once, at record time —
-        so accumulated_coverage() always works from already-cleaned
-        per-entry text."""
-        self._evict_expired()
+        """Thread-safe record of one call's evidence."""
+        with self._lock:
+            self._record_unlocked(payload_text)
+
+    def _record_unlocked(self, payload_text: str) -> None:
+        self._evict_expired_unlocked()
         cleaned = extract_reconstructable_value(payload_text)
         self._entries.append(_WindowEntry(value_text=cleaned, observed_at=time.monotonic()))
         while len(self._entries) > self.config.window_max_calls:
             self._entries.popleft()
 
     def _evict_expired(self) -> None:
+        with self._lock:
+            self._evict_expired_unlocked()
+
+    def _evict_expired_unlocked(self) -> None:
         cutoff = self.config.window_seconds
         now = time.monotonic()
         while self._entries and (now - self._entries[0].observed_at) > cutoff:
             self._entries.popleft()
 
     def accumulated_coverage(self, source_text: str, ngram_size: int) -> float | None:
-        """Coverage_n^cross(s, d, w), computed as the MAX of two methods
-        (see module docstring): ordered concatenation (recovers cross-
-        call boundary n-grams) and per-entry union (order-independent
-        safety net). Never lower than the original union-only method —
-        ordered concatenation is additive evidence, not a replacement."""
-        self._evict_expired()
+        with self._lock:
+            self._evict_expired_unlocked()
+            return self._accumulated_coverage_unlocked(source_text, ngram_size)
+
+    def record_and_measure(
+        self, payload_text: str, source_text: str, ngram_size: int
+    ) -> tuple[float, float]:
+        """Atomically measure-before, record, and measure-after.
+
+        This is the concurrency-critical V4 operation.  Keeping the entire
+        transition inside one per-window lock prevents two simultaneous calls
+        from interleaving between ``coverage_before`` and ``record`` and losing
+        or duplicating threshold-crossing events.  Contention is scoped only to
+        one (session, destination, source) window; unrelated destinations and
+        sessions remain fully concurrent.
+        """
+        with self._lock:
+            self._evict_expired_unlocked()
+            before = self._accumulated_coverage_unlocked(source_text, ngram_size) or 0.0
+            self._record_unlocked(payload_text)
+            after = self._accumulated_coverage_unlocked(source_text, ngram_size) or 0.0
+            return before, after
+
+    def _accumulated_coverage_unlocked(
+        self, source_text: str, ngram_size: int
+    ) -> float | None:
         source_ngrams = _ngrams(source_text, ngram_size)
         if not source_ngrams:
             return None
@@ -106,13 +133,6 @@ class CrossCallWindow:
             union |= _ngrams(entry.value_text, ngram_size)
         union_coverage = len(source_ngrams & union) / len(source_ngrams)
 
-        # Order-independent positional coverage.  Each window is already
-        # scoped to one registered sensitive source, so short fragments
-        # that are exact substrings of that source can contribute weak
-        # evidence even when they are shorter than ngram_size or arrive
-        # out of order.  We count UNIQUE source character positions, not
-        # call count, so replaying the same fragment cannot inflate
-        # coverage (duplicate-evidence resistance).
         covered_positions: set[int] = set()
         source_len = len(source_text)
         for entry in self._entries:
@@ -130,11 +150,11 @@ class CrossCallWindow:
         positional_coverage = (
             len(covered_positions) / source_len if source_len else 0.0
         )
-
         return max(ordered_coverage, union_coverage, positional_coverage)
 
     def __len__(self) -> int:
-        return len(self._entries)
+        with self._lock:
+            return len(self._entries)
 
 
 class CrossCallRegistry:
@@ -149,12 +169,17 @@ class CrossCallRegistry:
     def __init__(self, config: CrossCallWindowConfig):
         self._windows: dict[tuple[str, str, str], CrossCallWindow] = {}
         self._config = config
+        self._lock = threading.RLock()
 
     def window_for(self, session_id: str, destination: str, source_id: str) -> CrossCallWindow:
         key = (session_id, destination, source_id)
-        if key not in self._windows:
-            self._windows[key] = CrossCallWindow(self._config)
-        return self._windows[key]
+        with self._lock:
+            window = self._windows.get(key)
+            if window is None:
+                window = CrossCallWindow(self._config)
+                self._windows[key] = window
+            return window
 
     def __len__(self) -> int:
-        return len(self._windows)
+        with self._lock:
+            return len(self._windows)

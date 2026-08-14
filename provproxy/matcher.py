@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import re
 import time
+import threading
 from dataclasses import dataclass, field
 
 # pyahocorasick is a C extension — great for speed, but it needs a
@@ -155,17 +156,21 @@ class SessionMatcher:
         self._fragments: list[tuple[str, str]] = []
         self._last_activity = time.monotonic()
         self._ttl_seconds = ttl_seconds
+        self._lock = threading.RLock()
 
     def register_fragment(self, fragment_id: str, raw_pattern: str) -> None:
-        self._fragments.append((fragment_id, raw_pattern))
-        self._snapshot = MatcherSnapshot(list(self._fragments))
-        self._last_activity = time.monotonic()
+        with self._lock:
+            self._fragments.append((fragment_id, raw_pattern))
+            self._snapshot = MatcherSnapshot(list(self._fragments))
+            self._last_activity = time.monotonic()
 
     def current_snapshot(self) -> MatcherSnapshot:
-        return self._snapshot
+        with self._lock:
+            return self._snapshot
 
     def is_expired(self) -> bool:
-        return (time.monotonic() - self._last_activity) > self._ttl_seconds
+        with self._lock:
+            return (time.monotonic() - self._last_activity) > self._ttl_seconds
 
     def expire(self) -> None:
         """Replace-on-expiry: swap in a fresh, empty automaton and drop
@@ -173,5 +178,6 @@ class SessionMatcher:
         in-flight caller keeps working against the pre-expiry snapshot —
         Python doesn't garbage-collect it out from under them — but this
         call stops *new* scans from seeing the expired data."""
-        self._fragments.clear()
-        self._snapshot = MatcherSnapshot.empty()
+        with self._lock:
+            self._fragments.clear()
+            self._snapshot = MatcherSnapshot.empty()

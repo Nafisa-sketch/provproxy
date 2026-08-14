@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import json
 import re
+import threading
 from dataclasses import dataclass
 
 _KV_VALUE_RE = re.compile(r"\w+=(\S+)")
@@ -123,19 +124,24 @@ class ApproxMatcher:
         self._sources: list[tuple[str, str]] = []  # (fragment_id, raw_text)
         self.ngram_size = ngram_size
         self.threshold = threshold
+        self._lock = threading.RLock()
 
     def register_source(self, fragment_id: str, raw_text: str) -> None:
-        self._sources.append((fragment_id, raw_text))
+        with self._lock:
+            self._sources.append((fragment_id, raw_text))
 
     def sources(self) -> list[tuple[str, str]]:
         """Public accessor for (fragment_id, raw_text) pairs — used by V4
         cross-call scoring, which needs the same registered sources this
         matcher already tracks."""
-        return list(self._sources)
+        with self._lock:
+            return list(self._sources)
 
     def scan(self, payload: str) -> list[ApproxMatch]:
+        with self._lock:
+            sources = list(self._sources)
         matches = []
-        for fragment_id, source in self._sources:
+        for fragment_id, source in sources:
             cov = best_coverage(source, payload, self.ngram_size)
             if cov >= self.threshold:
                 matches.append(ApproxMatch(fragment_id=fragment_id, coverage=cov))
@@ -145,10 +151,12 @@ class ApproxMatcher:
         """Same scan, but sweeping a set of thresholds instead of the
         single enforced one — used by the Week 4/5 evaluation harness to
         build a precision/recall curve rather than a single point."""
+        with self._lock:
+            sources = list(self._sources)
         results = []
         for t in thresholds:
             count = sum(
-                1 for _fid, source in self._sources
+                1 for _fid, source in sources
                 if best_coverage(source, payload, self.ngram_size) >= t
             )
             results.append((t, count))
