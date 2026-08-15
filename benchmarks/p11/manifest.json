@@ -1,0 +1,46 @@
+﻿{
+  "version": "p11-v1",
+  "purpose": "generator-independent external-validity evaluation",
+  "seed": 20260817,
+  "frozen_before_detector_execution": true,
+
+  "privacy": {
+    "synthetic_only": true,
+    "real_pii": false,
+    "real_credentials": false,
+    "private_user_data": false,
+    "live_network_execution": false
+  },
+
+  "design_constraints": {
+    "provproxy_imports_allowed_in_generator": false,
+    "detector_feedback_during_generation": false,
+    "minimum_structural_templates_per_category": 8,
+    "require_cross_label_structural_overlap": true,
+    "unique_secret_per_malicious_case": true
+  },
+
+  "malicious_categories": [
+    "direct",
+    "encoded",
+    "intra_request_fragmented",
+    "cross_call_fragmented",
+    "interleaved",
+    "destination_rotation",
+    "destination_alias",
+    "partial_exfiltration",
+    "multi_source",
+    "semantic_reformulation"
+  ],
+
+  "benign_categories": [
+    "same_structure_benign",
+    "legitimate_encoding",
+    "dummy_credentials",
+    "approved_destination",
+    "common_substring",
+    "multi_tool_benign",
+    "semantic_similarity",
+    "fragment_like_benign"
+  ]
+}

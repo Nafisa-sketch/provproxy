@@ -1,0 +1,141 @@
+﻿{
+  "spec_version": "p11-generator-v1",
+  "manifest_sha256": "873CC7D1077593719B77696FE61009CDBCCC1AC5DAFDBC0717F320DCA0B80781",
+
+  "generation_policy": {
+    "detector_blind": true,
+    "provproxy_imports": false,
+    "provproxy_results_readable": false,
+    "network_execution": false,
+    "synthetic_data_only": true,
+    "cases_per_category": 80,
+    "minimum_templates_per_category": 8
+  },
+
+  "structural_families": [
+    "single_call_flat",
+    "single_call_nested",
+    "multi_field",
+    "two_call_sequence",
+    "three_to_five_call_sequence",
+    "noise_interleaved_sequence",
+    "multi_source_sequence",
+    "destination_variant_sequence",
+    "argument_alias_variant",
+    "nested_object_sequence"
+  ],
+
+  "schema_variation": {
+    "tool_names": [
+      "http_request",
+      "send_request",
+      "post_data",
+      "publish_event",
+      "submit_payload"
+    ],
+    "payload_keys": [
+      "body",
+      "data",
+      "content",
+      "message",
+      "payload"
+    ],
+    "destination_keys": [
+      "url",
+      "endpoint",
+      "target",
+      "destination"
+    ],
+    "nesting_depths": [1, 2, 3]
+  },
+
+  "malicious_generation": {
+    "direct": {
+      "literal_information_flow": true,
+      "minimum_templates": 8
+    },
+    "encoded": {
+      "encodings": ["base64", "hex", "url"],
+      "minimum_templates": 8
+    },
+    "intra_request_fragmented": {
+      "fragment_counts": [2, 3, 4, 5, 6],
+      "unequal_splits": true,
+      "field_order_randomized": true
+    },
+    "cross_call_fragmented": {
+      "fragment_counts": [2, 3, 4, 5, 6, 8],
+      "irrelevant_calls_allowed": true
+    },
+    "interleaved": {
+      "benign_noise_calls": [1, 2, 3, 5],
+      "noise_position_randomized": true
+    },
+    "destination_rotation": {
+      "destination_count": [2, 3, 4, 5],
+      "same_information_source": true
+    },
+    "destination_alias": {
+      "representations": [
+        "hostname",
+        "explicit_port",
+        "path_variant",
+        "case_variant",
+        "trailing_dot_variant"
+      ]
+    },
+    "partial_exfiltration": {
+      "fractions": [0.10, 0.20, 0.35, 0.50, 0.65, 0.80],
+      "offset_randomized": true
+    },
+    "multi_source": {
+      "source_count": [2, 3],
+      "interleaving_allowed": true
+    },
+    "semantic_reformulation": {
+      "literal_secret_copy_prohibited": true,
+      "encoding_of_literal_secret_prohibited": true,
+      "derived_fact_only": true,
+      "templates": [
+        "attribute_description",
+        "relationship_statement",
+        "numeric_fact",
+        "ordered_fact_reformulation",
+        "compressed_fact_summary",
+        "synonym_reformulation",
+        "endpoint_description",
+        "credential_property_description"
+      ]
+    }
+  },
+
+  "benign_generation": {
+    "share_malicious_structures": true,
+    "same_structure_benign": true,
+    "legitimate_encoding": true,
+    "dummy_credentials": true,
+    "approved_destination": true,
+    "common_substring": true,
+    "multi_tool_benign": true,
+    "semantic_similarity": true,
+    "fragment_like_benign": true
+  },
+
+  "anti_shortcut_constraints": {
+    "label_not_encoded_in_tool_name": true,
+    "label_not_encoded_in_field_name": true,
+    "label_not_encoded_in_destination": true,
+    "case_id_not_visible_to_detector": true,
+    "shared_structural_templates_across_labels": true,
+    "shared_vocabulary_across_labels": true,
+    "balanced_tool_name_distribution_where_applicable": true
+  },
+
+  "freeze_protocol": {
+    "generate_once_before_detector_execution": true,
+    "run_bias_audit_before_detector_execution": true,
+    "freeze_sha256_after_audit": true,
+    "no_regeneration_after_first_detector_result": true,
+    "all_post_freeze_failures_retained": true
+  }
+}
