@@ -202,6 +202,36 @@ def _evaluate_detection(
                     review_required=True,
                 )
 
+            # Optional cross-destination fan-out mitigation.  Strict V4
+            # destination windows remain independent for hard matching, but an
+            # attacker who rotates destinations can otherwise reset cumulative
+            # evidence on every call.  This auxiliary session/source window is
+            # REVIEW-only and disabled by default, preserving historical V4
+            # semantics unless a deployment explicitly opts in.
+            fanout_threshold = policy.cross_call_window.fanout_review_threshold
+            if fanout_threshold is not None and 0.0 < fanout_threshold < threshold:
+                fanout_window = session.fanout_registry.window_for(
+                    session.session_id, fragment_id
+                )
+                fan_before, fan_after, distinct_destinations = (
+                    fanout_window.record_and_measure(
+                        evidence_text, destination_domain, source_text, n
+                    )
+                )
+                if (
+                    distinct_destinations
+                    >= policy.cross_call_window.fanout_min_destinations
+                    and fan_before < fanout_threshold <= fan_after
+                ):
+                    return TierResult(
+                        tier=tier.value,
+                        matched=False,
+                        matched_via="cross-destination-review",
+                        matched_fragment_id=fragment_id,
+                        approx_coverage=fan_after,
+                        review_required=True,
+                    )
+
     return TierResult(tier=tier.value, matched=False)
 
 

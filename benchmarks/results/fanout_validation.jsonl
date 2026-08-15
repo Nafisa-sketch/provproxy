@@ -1,0 +1,2 @@
+{"containment_call": null, "exposure_fraction": 1.0, "fanout_guard_enabled": false, "forwarded_requests": 14, "matched": false, "mode": "strict_destination_only", "passed": true, "receiver_observed_requests": 14, "review": false, "via": null}
+{"containment_call": 5, "exposure_fraction": 0.2927, "fanout_guard_enabled": true, "forwarded_requests": 4, "matched": false, "mode": "fanout_guard", "passed": true, "receiver_observed_requests": 4, "review": true, "via": "cross-destination-review"}

@@ -1,7 +1,12 @@
-﻿__pycache__/
+__pycache__/
 *.pyc
 .pytest_cache/
 .venv/
 venv/
 *.egg-info/
 benchmarks/results/v*_runs.json
+
+# Local experiment / persistence state
+.provproxy_state/
+p6_backup/
+non_existent_dummy.json

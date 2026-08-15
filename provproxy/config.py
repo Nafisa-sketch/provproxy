@@ -128,6 +128,31 @@ class CrossCallWindowConfig:
     window_seconds: int = 300
     window_max_calls: int = 50
     review_threshold: float | None = None
+    # Optional session-wide cross-destination fan-out review. Disabled by
+    # default to preserve strict destination-isolation semantics. When set,
+    # evidence for the same registered source may be accumulated across
+    # distinct destinations for REVIEW/HOLD only (never a hard match).
+    fanout_review_threshold: float | None = None
+    fanout_min_destinations: int = 2
+
+
+
+@dataclass
+class PersistenceConfig:
+    """Optional P6 restart-continuity persistence.
+
+    Disabled by default so historical V0-V4 experiments remain unchanged.
+    When enabled, a stable --session-id MUST be supplied to the CLI;
+    otherwise a restart would generate a new UUID and intentionally-isolated
+    persisted state could not be recovered.
+    """
+    enabled: bool = False
+    state_dir: str = ".provproxy_state"
+    fsync_every: int = 16
+    compact_every: int = 2000
+    fail_closed_on_corruption: bool = True
+    # Test/development only on platforms without an OS key protector.
+    allow_file_key_fallback: bool = False
 
 
 @dataclass
@@ -145,6 +170,7 @@ class PolicyFile:
     approx_matching: ApproxMatchingConfig = field(default_factory=ApproxMatchingConfig)
     decode_limits: DecodeLimits = field(default_factory=DecodeLimits)
     cross_call_window: CrossCallWindowConfig = field(default_factory=CrossCallWindowConfig)
+    persistence: PersistenceConfig = field(default_factory=PersistenceConfig)
     enforcement: EnforcementConfig = field(default_factory=EnforcementConfig)
 
     def binding_for(self, server_id: str) -> Optional[ServerBinding]:
@@ -173,6 +199,7 @@ class PolicyFile:
             approx_matching=ApproxMatchingConfig(**raw.get("approx_matching", {})),
             decode_limits=DecodeLimits(**raw.get("decode_limits", {})),
             cross_call_window=CrossCallWindowConfig(**raw.get("cross_call_window", {})),
+            persistence=PersistenceConfig(**raw.get("persistence", {})),
             enforcement=EnforcementConfig(
                 on_match=EnforcementAction(raw.get("enforcement", {}).get("on_match", "ask_user")),
                 approval_timeout_seconds=raw.get("enforcement", {}).get("approval_timeout_seconds", 60),
