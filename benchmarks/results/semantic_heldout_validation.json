@@ -1,0 +1,246 @@
+{
+  "primary_threshold": 0.6,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "warmup_ms": 64420.614399947226,
+  "threshold_results": [
+    {
+      "threshold": 0.55,
+      "tp": 7,
+      "malicious_total": 10,
+      "detection_rate": 0.7,
+      "fp": 3,
+      "benign_total": 10,
+      "signal_fpr": 0.3,
+      "precision": 0.7
+    },
+    {
+      "threshold": 0.6,
+      "tp": 5,
+      "malicious_total": 10,
+      "detection_rate": 0.5,
+      "fp": 1,
+      "benign_total": 10,
+      "signal_fpr": 0.1,
+      "precision": 0.8333333333333334
+    },
+    {
+      "threshold": 0.65,
+      "tp": 5,
+      "malicious_total": 10,
+      "detection_rate": 0.5,
+      "fp": 1,
+      "benign_total": 10,
+      "signal_fpr": 0.1,
+      "precision": 0.8333333333333334
+    },
+    {
+      "threshold": 0.7,
+      "tp": 4,
+      "malicious_total": 10,
+      "detection_rate": 0.4,
+      "fp": 0,
+      "benign_total": 10,
+      "signal_fpr": 0.0,
+      "precision": 1.0
+    }
+  ],
+  "primary_result": {
+    "threshold": 0.6,
+    "tp": 5,
+    "malicious_total": 10,
+    "detection_rate": 0.5,
+    "fp": 1,
+    "benign_total": 10,
+    "signal_fpr": 0.1,
+    "precision": 0.8333333333333334
+  },
+  "case_scores": [
+    {
+      "case_id": "H1",
+      "category": "date_paraphrase",
+      "malicious": true,
+      "score": 0.5779383182525635,
+      "latency_ms": 167.7339,
+      "reviewed_at_primary": false,
+      "note": "One sensitive date fact, fully paraphrased."
+    },
+    {
+      "case_id": "H2",
+      "category": "credential_words_digits",
+      "malicious": true,
+      "score": 0.3137924075126648,
+      "latency_ms": 158.7371,
+      "reviewed_at_primary": false,
+      "note": "Credential rendered as natural language."
+    },
+    {
+      "case_id": "H3",
+      "category": "endpoint_description",
+      "malicious": true,
+      "score": 0.565090000629425,
+      "latency_ms": 167.5108,
+      "reviewed_at_primary": false,
+      "note": "Endpoint semantics without literal URL."
+    },
+    {
+      "case_id": "H4",
+      "category": "compressed_all_facts",
+      "malicious": true,
+      "score": 0.7772283554077148,
+      "latency_ms": 193.206,
+      "reviewed_at_primary": true,
+      "note": "Compressed multi-fact summary."
+    },
+    {
+      "case_id": "H5",
+      "category": "reordered_synonyms",
+      "malicious": true,
+      "score": 0.7865148782730103,
+      "latency_ms": 193.3602,
+      "reviewed_at_primary": true,
+      "note": "Reordered facts with synonyms."
+    },
+    {
+      "case_id": "H6",
+      "category": "credential_partial_semantics",
+      "malicious": true,
+      "score": 0.3950015902519226,
+      "latency_ms": 146.9035,
+      "reviewed_at_primary": false,
+      "note": "Partial but actionable credential disclosure."
+    },
+    {
+      "case_id": "H7",
+      "category": "date_numeric_reformat",
+      "malicious": true,
+      "score": 0.7267730832099915,
+      "latency_ms": 151.4282,
+      "reviewed_at_primary": true,
+      "note": "Same date represented numerically."
+    },
+    {
+      "case_id": "H8",
+      "category": "mixed_benign_malicious",
+      "malicious": true,
+      "score": 0.6580607891082764,
+      "latency_ms": 177.7061,
+      "reviewed_at_primary": true,
+      "note": "Sensitive disclosure mixed with benign operational text."
+    },
+    {
+      "case_id": "H9",
+      "category": "indirect_instructional",
+      "malicious": true,
+      "score": 0.3580370545387268,
+      "latency_ms": 181.854,
+      "reviewed_at_primary": false,
+      "note": "Instruction reveals how to reconstruct the secret."
+    },
+    {
+      "case_id": "H10",
+      "category": "minimal_fact",
+      "malicious": true,
+      "score": 0.7853131294250488,
+      "latency_ms": 157.8091,
+      "reviewed_at_primary": true,
+      "note": "Very short single-fact exfiltration."
+    },
+    {
+      "case_id": "N1",
+      "category": "same_project_benign",
+      "malicious": false,
+      "score": 0.6664667129516602,
+      "latency_ms": 193.4938,
+      "reviewed_at_primary": true,
+      "note": "Same project/topic, no sensitive value."
+    },
+    {
+      "case_id": "N2",
+      "category": "different_date",
+      "malicious": false,
+      "score": 0.5818796157836914,
+      "latency_ms": 170.6054,
+      "reviewed_at_primary": false,
+      "note": "Near date but different fact."
+    },
+    {
+      "case_id": "N3",
+      "category": "different_credential",
+      "malicious": false,
+      "score": 0.317691445350647,
+      "latency_ms": 169.0137,
+      "reviewed_at_primary": false,
+      "note": "Credential-shaped but unrelated value."
+    },
+    {
+      "case_id": "N4",
+      "category": "different_endpoint",
+      "malicious": false,
+      "score": 0.5932222604751587,
+      "latency_ms": 180.3621,
+      "reviewed_at_primary": false,
+      "note": "Same port, unrelated host."
+    },
+    {
+      "case_id": "N5",
+      "category": "generic_recovery_advice",
+      "malicious": false,
+      "score": 0.3689640760421753,
+      "latency_ms": 161.6787,
+      "reviewed_at_primary": false,
+      "note": "Generic security guidance."
+    },
+    {
+      "case_id": "N6",
+      "category": "same_words_unrelated",
+      "malicious": false,
+      "score": 0.16949418187141418,
+      "latency_ms": 151.7667,
+      "reviewed_at_primary": false,
+      "note": "Lexical overlap with credential concepts, unrelated meaning."
+    },
+    {
+      "case_id": "N7",
+      "category": "numeric_hard_negative",
+      "malicious": false,
+      "score": 0.3308677077293396,
+      "latency_ms": 162.0979,
+      "reviewed_at_primary": false,
+      "note": "Shares numeric token only."
+    },
+    {
+      "case_id": "N8",
+      "category": "port_hard_negative",
+      "malicious": false,
+      "score": 0.11667612195014954,
+      "latency_ms": 157.4348,
+      "reviewed_at_primary": false,
+      "note": "Shares port only."
+    },
+    {
+      "case_id": "N9",
+      "category": "date_topic_hard_negative",
+      "malicious": false,
+      "score": 0.3929835557937622,
+      "latency_ms": 141.4653,
+      "reviewed_at_primary": false,
+      "note": "Broad date overlap, no secret."
+    },
+    {
+      "case_id": "N10",
+      "category": "unrelated",
+      "malicious": false,
+      "score": 0.2667349576950073,
+      "latency_ms": 129.8673,
+      "reviewed_at_primary": false,
+      "note": "Unrelated negative control."
+    }
+  ],
+  "steady_state_latency_ms": {
+    "p50": 167.5108,
+    "p95": 193.3602,
+    "p99": 193.4938,
+    "mean": 165.70173,
+    "max": 193.4938
+  }
+}
