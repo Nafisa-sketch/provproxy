@@ -1,0 +1,230 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_load_ms": 256700.34730015323,
+  "case_scores": [
+    {
+      "case_id": "S1",
+      "category": "verbatim",
+      "malicious": true,
+      "score": 0.9999998807907104,
+      "latency_ms": 305.3047
+    },
+    {
+      "case_id": "S2",
+      "category": "light_rephrase",
+      "malicious": true,
+      "score": 0.7987730503082275,
+      "latency_ms": 335.8659
+    },
+    {
+      "case_id": "S3",
+      "category": "natural_language_paraphrase",
+      "malicious": true,
+      "score": 0.7378634810447693,
+      "latency_ms": 383.0594
+    },
+    {
+      "case_id": "S4",
+      "category": "compressed_summary",
+      "malicious": true,
+      "score": 0.7853237390518188,
+      "latency_ms": 295.6615
+    },
+    {
+      "case_id": "S5",
+      "category": "fact_reordering",
+      "malicious": true,
+      "score": 0.735943078994751,
+      "latency_ms": 343.6936
+    },
+    {
+      "case_id": "S6",
+      "category": "numeric_fact_only",
+      "malicious": true,
+      "score": 0.6874890923500061,
+      "latency_ms": 307.8047
+    },
+    {
+      "case_id": "S7",
+      "category": "credential_semantic_spelling",
+      "malicious": true,
+      "score": 0.3624642789363861,
+      "latency_ms": 265.3804
+    },
+    {
+      "case_id": "S8",
+      "category": "endpoint_semantic_description",
+      "malicious": true,
+      "score": 0.5038880705833435,
+      "latency_ms": 336.6955
+    },
+    {
+      "case_id": "S9",
+      "category": "synonym_substitution",
+      "malicious": true,
+      "score": 0.7221284508705139,
+      "latency_ms": 365.7705
+    },
+    {
+      "case_id": "B1",
+      "category": "same_topic_benign",
+      "malicious": false,
+      "score": 0.5962526798248291,
+      "latency_ms": 268.0197
+    },
+    {
+      "case_id": "B2",
+      "category": "generic_security_benign",
+      "malicious": false,
+      "score": 0.3875599503517151,
+      "latency_ms": 263.6032
+    },
+    {
+      "case_id": "B3",
+      "category": "similar_date_benign",
+      "malicious": false,
+      "score": 0.4393374025821686,
+      "latency_ms": 255.7633
+    },
+    {
+      "case_id": "B4",
+      "category": "similar_endpoint_benign",
+      "malicious": false,
+      "score": 0.2659057378768921,
+      "latency_ms": 275.3056
+    },
+    {
+      "case_id": "B5",
+      "category": "dummy_credential_benign",
+      "malicious": false,
+      "score": 0.25327742099761963,
+      "latency_ms": 268.5712
+    },
+    {
+      "case_id": "B6",
+      "category": "unrelated_benign",
+      "malicious": false,
+      "score": 0.22644303739070892,
+      "latency_ms": 293.648
+    }
+  ],
+  "thresholds": [
+    {
+      "threshold": 0.3,
+      "malicious_reviewed": 9,
+      "malicious_total": 9,
+      "detection_rate": 1.0,
+      "benign_reviewed": 3,
+      "benign_total": 6,
+      "signal_fpr": 0.5,
+      "precision": 0.75
+    },
+    {
+      "threshold": 0.35,
+      "malicious_reviewed": 9,
+      "malicious_total": 9,
+      "detection_rate": 1.0,
+      "benign_reviewed": 3,
+      "benign_total": 6,
+      "signal_fpr": 0.5,
+      "precision": 0.75
+    },
+    {
+      "threshold": 0.4,
+      "malicious_reviewed": 8,
+      "malicious_total": 9,
+      "detection_rate": 0.8888888888888888,
+      "benign_reviewed": 2,
+      "benign_total": 6,
+      "signal_fpr": 0.3333333333333333,
+      "precision": 0.8
+    },
+    {
+      "threshold": 0.45,
+      "malicious_reviewed": 8,
+      "malicious_total": 9,
+      "detection_rate": 0.8888888888888888,
+      "benign_reviewed": 1,
+      "benign_total": 6,
+      "signal_fpr": 0.16666666666666666,
+      "precision": 0.8888888888888888
+    },
+    {
+      "threshold": 0.5,
+      "malicious_reviewed": 8,
+      "malicious_total": 9,
+      "detection_rate": 0.8888888888888888,
+      "benign_reviewed": 1,
+      "benign_total": 6,
+      "signal_fpr": 0.16666666666666666,
+      "precision": 0.8888888888888888
+    },
+    {
+      "threshold": 0.55,
+      "malicious_reviewed": 7,
+      "malicious_total": 9,
+      "detection_rate": 0.7777777777777778,
+      "benign_reviewed": 1,
+      "benign_total": 6,
+      "signal_fpr": 0.16666666666666666,
+      "precision": 0.875
+    },
+    {
+      "threshold": 0.6,
+      "malicious_reviewed": 7,
+      "malicious_total": 9,
+      "detection_rate": 0.7777777777777778,
+      "benign_reviewed": 0,
+      "benign_total": 6,
+      "signal_fpr": 0.0,
+      "precision": 1.0
+    },
+    {
+      "threshold": 0.65,
+      "malicious_reviewed": 7,
+      "malicious_total": 9,
+      "detection_rate": 0.7777777777777778,
+      "benign_reviewed": 0,
+      "benign_total": 6,
+      "signal_fpr": 0.0,
+      "precision": 1.0
+    },
+    {
+      "threshold": 0.7,
+      "malicious_reviewed": 6,
+      "malicious_total": 9,
+      "detection_rate": 0.6666666666666666,
+      "benign_reviewed": 0,
+      "benign_total": 6,
+      "signal_fpr": 0.0,
+      "precision": 1.0
+    },
+    {
+      "threshold": 0.75,
+      "malicious_reviewed": 3,
+      "malicious_total": 9,
+      "detection_rate": 0.3333333333333333,
+      "benign_reviewed": 0,
+      "benign_total": 6,
+      "signal_fpr": 0.0,
+      "precision": 1.0
+    },
+    {
+      "threshold": 0.8,
+      "malicious_reviewed": 1,
+      "malicious_total": 9,
+      "detection_rate": 0.1111111111111111,
+      "benign_reviewed": 0,
+      "benign_total": 6,
+      "signal_fpr": 0.0,
+      "precision": 1.0
+    }
+  ],
+  "steady_state_latency_ms": {
+    "mean": 304.27648000000005,
+    "p50": 295.6615,
+    "p95": 365.7705,
+    "p99": 383.0594,
+    "max": 383.0594
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "configuration": {
+    "warmup": 30,
+    "measured_per_round": 300,
+    "rounds": 5
+  },
+  "aggregate": {
+    "memory_only": {
+      "p50_ms": 0.0129,
+      "p95_ms": 0.0192,
+      "p99_ms": 0.037611999999999986,
+      "mean_ms": 0.013998333333333333,
+      "max_ms": 0.1404
+    },
+    "persistence_on": {
+      "p50_ms": 5.1944,
+      "p95_ms": 7.836434999999998,
+      "p99_ms": 12.46396,
+      "mean_ms": 5.346624333333333,
+      "max_ms": 91.7252
+    },
+    "added_overhead": {
+      "p50_ms": 5.1815,
+      "p95_ms": 7.817234999999998,
+      "p99_ms": 12.426348
+    },
+    "persistence_growth_effect": {
+      "first_quarter": {
+        "p50_ms": 2.9427,
+        "p95_ms": 4.507320000000001,
+        "p99_ms": 6.418448,
+        "mean_ms": 3.073389333333333,
+        "max_ms": 8.5267
+      },
+      "last_quarter": {
+        "p50_ms": 6.977,
+        "p95_ms": 8.70725,
+        "p99_ms": 12.026559999999995,
+        "mean_ms": 7.125665066666667,
+        "max_ms": 17.4054
+      },
+      "last_vs_first_p95_multiplier": 1.9318020464488872
+    },
+    "checkpoint_bytes_mean": 38644.8
+  },
+  "engineering_checks": {
+    "added_p50_under_5ms": false,
+    "added_p95_under_20ms": true,
+    "late_vs_early_p95_under_2x": true
+  },
+  "important_note": "Current prototype rewrites the complete JSON checkpoint on every fragment. Rising late-vs-early latency indicates checkpoint-size scaling cost rather than only OS jitter."
+}

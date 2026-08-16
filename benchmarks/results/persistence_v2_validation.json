@@ -1,0 +1,92 @@
+{
+  "restart_continuity": {
+    "reconstructed": "CONFIDENTIAL_EXFIL_DATA_999",
+    "pass": true
+  },
+  "isolation": {
+    "session_A": [
+      "SECRET_A"
+    ],
+    "session_B": [
+      "SECRET_B"
+    ],
+    "other_destination": [
+      "SECRET_OTHER"
+    ],
+    "pass": true
+  },
+  "ttl": {
+    "restored_after_expiry": [],
+    "pass": true
+  },
+  "at_rest": {
+    "plaintext_found": false,
+    "reversed_plaintext_found": false,
+    "pass": true
+  },
+  "tamper_detection": {
+    "tampering_detected_fail_closed": true,
+    "pass": true
+  },
+  "truncation_detection": {
+    "truncation_detected_fail_closed": true,
+    "pass": true
+  },
+  "performance": {
+    "rounds": [
+      {
+        "round": 1,
+        "off_p95_ms": 0.012605000000000002,
+        "on_p95_ms": 2.353900000000001,
+        "journal_kib": 82.025390625
+      },
+      {
+        "round": 2,
+        "off_p95_ms": 0.002915000000000003,
+        "on_p95_ms": 2.5953550000000005,
+        "journal_kib": 82.029296875
+      },
+      {
+        "round": 3,
+        "off_p95_ms": 0.002905000000000001,
+        "on_p95_ms": 2.2596700000000003,
+        "journal_kib": 82.072265625
+      },
+      {
+        "round": 4,
+        "off_p95_ms": 0.0028,
+        "on_p95_ms": 2.3578650000000003,
+        "journal_kib": 82.068359375
+      },
+      {
+        "round": 5,
+        "off_p95_ms": 0.0028,
+        "on_p95_ms": 2.2799750000000003,
+        "journal_kib": 82.017578125
+      }
+    ],
+    "memory_only": {
+      "p50_ms": 0.0023,
+      "p95_ms": 0.0065,
+      "p99_ms": 0.018,
+      "mean_ms": 0.004116333333333334,
+      "max_ms": 0.9045
+    },
+    "encrypted_append_only": {
+      "p50_ms": 1.486,
+      "p95_ms": 2.3801799999999993,
+      "p99_ms": 3.0323379999999993,
+      "mean_ms": 1.6117396666666668,
+      "max_ms": 22.1267
+    },
+    "added_overhead": {
+      "p50_ms": 1.4837,
+      "p95_ms": 2.3736799999999993,
+      "p99_ms": 3.0143379999999995
+    },
+    "checks": {
+      "added_p50_under_5ms": true,
+      "added_p95_under_20ms": true
+    }
+  }
+}

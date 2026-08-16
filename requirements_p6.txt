@@ -1,0 +1,2 @@
+# P6 secure persistence
+cryptography>=42.0.0
