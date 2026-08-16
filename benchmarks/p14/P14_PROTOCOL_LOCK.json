@@ -1,0 +1,75 @@
+﻿{
+  "experiment": "P14 external runtime-provenance baseline comparison",
+  "version": "p14-v1",
+  "status": "PROTOCOL_LOCKED_BEFORE_EXTERNAL_BASELINE_EXECUTION",
+
+  "research_question": "How does frozen ProvProxy compare with an independently motivated runtime snippet-provenance baseline on source-to-sink disclosure detection, transformation robustness, fragmented exfiltration, false-positive behavior, and runtime overhead?",
+
+  "primary_system": {
+    "name": "ProvProxy",
+    "configuration": "Frozen existing ProvProxy detector",
+    "retuning_after_baseline_results": false,
+    "modify_p11": false,
+    "modify_p12": false,
+    "modify_p13": false
+  },
+
+  "primary_external_baseline": {
+    "name": "MCP-SandboxScan-style runtime provenance baseline",
+    "basis": "Published MCP-SandboxScan runtime source-to-sink methodology",
+    "matching_principle": "snippet-based substring provenance matching",
+    "claim": "methodology reproduction unless an official runnable implementation is independently verified",
+    "must_not_be_artificially_weakened": true
+  },
+
+  "comparison_scope": {
+    "direct_source_to_sink": true,
+    "encoded_or_transformed_disclosure": true,
+    "intra_request_fragmentation": true,
+    "cross_call_fragmentation": true,
+    "interleaving": true,
+    "destination_rotation": true,
+    "partial_exfiltration": true,
+    "benign_hard_negatives": true
+  },
+
+  "fairness_constraints": {
+    "same_cases_for_all_systems": true,
+    "same_ground_truth": true,
+    "same_host_environment": true,
+    "same_measurement_harness": true,
+    "no_provproxy_retuning_after_external_results": true,
+    "no_baseline_sabotage": true,
+    "report_baseline_wins": true,
+    "report_provproxy_losses": true,
+    "preserve_all_failures": true
+  },
+
+  "primary_metrics": [
+    "detection_rate",
+    "false_positive_rate",
+    "precision",
+    "balanced_accuracy",
+    "category_detection_rate",
+    "p50_latency_ms",
+    "p95_latency_ms",
+    "p99_latency_ms"
+  ],
+
+  "paired_statistics": {
+    "provproxy_miss_baseline_hit": true,
+    "provproxy_hit_baseline_miss": true,
+    "exact_two_sided_mcnemar": true,
+    "wilson_95_ci": true
+  },
+
+  "interpretation_constraints": {
+    "do_not_claim_universal_superiority": true,
+    "separate_detection_from_enforcement": true,
+    "separate_runtime_provenance_from_static_scanning": true,
+    "distinguish_methodology_reproduction_from_official_tool": true,
+    "negative_result_is_valid": true
+  },
+
+  "external_validity_goal": "Determine whether ProvProxy's transformation-aware, approximate, and cross-call provenance mechanisms provide measurable benefit over a simpler independently motivated runtime snippet-provenance baseline."
+}
