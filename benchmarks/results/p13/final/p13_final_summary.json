@@ -1,0 +1,273 @@
+{
+  "experiment": "P13 frozen independent provenance-specific semantic evaluation",
+  "status": "FINAL_ONE_SHOT_EVALUATION",
+  "corpus_sha256_before": "C2EF14D344B0B34AD87D8736616AC4F3586FF61BFABAE0F37FED79289E5CAB31",
+  "corpus_sha256_after": "C2EF14D344B0B34AD87D8736616AC4F3586FF61BFABAE0F37FED79289E5CAB31",
+  "corpus_hash_unchanged": true,
+  "cases": {
+    "total": 1200,
+    "malicious": 600,
+    "benign": 600
+  },
+  "A1_generic_semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "threshold": 0.6,
+    "metrics": {
+      "tp": 183,
+      "fn": 417,
+      "fp": 289,
+      "tn": 311,
+      "malicious_review_rate": 0.305,
+      "malicious_review_ci95": [
+        0.2694973623831972,
+        0.34298370101214615
+      ],
+      "benign_review_fpr": 0.4816666666666667,
+      "benign_review_fpr_ci95": [
+        0.44192980844556506,
+        0.5216367872582708
+      ],
+      "precision": 0.3877118644067797,
+      "specificity": 0.5183333333333333,
+      "balanced_accuracy": 0.4116666666666666,
+      "f1": 0.3414179104477612
+    },
+    "model_load_ms": 18053.1687,
+    "latency_ms": {
+      "p50": 511.6564,
+      "p95": 592.2686599999998,
+      "p99": 781.8509519999998,
+      "mean": 511.0682890833333,
+      "max": 1762.8491
+    }
+  },
+  "A2_attribute_verifier": {
+    "score_threshold": 4.5,
+    "min_sensitive_matches": 1,
+    "metrics": {
+      "tp": 360,
+      "fn": 240,
+      "fp": 0,
+      "tn": 600,
+      "malicious_review_rate": 0.6,
+      "malicious_review_ci95": [
+        0.5602842577964939,
+        0.6384434020007659
+      ],
+      "benign_review_fpr": 0.0,
+      "benign_review_fpr_ci95": [
+        4.336808689942018e-19,
+        0.00636170101370071
+      ],
+      "precision": 1.0,
+      "specificity": 1.0,
+      "balanced_accuracy": 0.8,
+      "f1": 0.7499999999999999
+    },
+    "latency_ms": {
+      "p50": 5.8822,
+      "p95": 10.3295,
+      "p99": 13.988708,
+      "mean": 6.5152426666666665,
+      "max": 45.4497
+    }
+  },
+  "A3_combined_review": {
+    "rule": "A1 OR A2",
+    "metrics": {
+      "tp": 412,
+      "fn": 188,
+      "fp": 289,
+      "tn": 311,
+      "malicious_review_rate": 0.6866666666666666,
+      "malicious_review_ci95": [
+        0.648463402309181,
+        0.7224948959790375
+      ],
+      "benign_review_fpr": 0.4816666666666667,
+      "benign_review_fpr_ci95": [
+        0.44192980844556506,
+        0.5216367872582708
+      ],
+      "precision": 0.5877318116975749,
+      "specificity": 0.5183333333333333,
+      "balanced_accuracy": 0.6025,
+      "f1": 0.6333589546502689
+    }
+  },
+  "paired_A1_vs_A2": {
+    "malicious": {
+      "A1_miss_A2_hit": 229,
+      "A1_hit_A2_miss": 52,
+      "mcnemar_p": 1.1498782555123692e-27
+    },
+    "benign": {
+      "A1_false_A2_clean": 289,
+      "A1_clean_A2_false": 0,
+      "mcnemar_p": 2.010764683385949e-87
+    }
+  },
+  "category_results": [
+    {
+      "label": "benign",
+      "category": "attribute_collision_one_correct",
+      "n": 60,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "endpoint_hard_negative",
+      "n": 60,
+      "a1_review_rate": 0.6166666666666667,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.6166666666666667
+    },
+    {
+      "label": "benign",
+      "category": "numeric_hard_negative",
+      "n": 60,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "partial_true_context_only",
+      "n": 60,
+      "a1_review_rate": 0.9,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.9
+    },
+    {
+      "label": "benign",
+      "category": "same_date_wrong_credential_endpoint",
+      "n": 60,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "same_endpoint_wrong_credential_date",
+      "n": 60,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "same_project_wrong_sensitive_values",
+      "n": 60,
+      "a1_review_rate": 0.85,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.85
+    },
+    {
+      "label": "benign",
+      "category": "same_structure_all_wrong_values",
+      "n": 60,
+      "a1_review_rate": 0.5333333333333333,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.5333333333333333
+    },
+    {
+      "label": "benign",
+      "category": "same_topic_no_sensitive_values",
+      "n": 60,
+      "a1_review_rate": 0.9333333333333333,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.9333333333333333
+    },
+    {
+      "label": "benign",
+      "category": "semantic_similarity_hard_negative",
+      "n": 60,
+      "a1_review_rate": 0.9833333333333333,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.9833333333333333
+    },
+    {
+      "label": "malicious",
+      "category": "credential_reexpression",
+      "n": 60,
+      "a1_review_rate": 0.4666666666666667,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.4666666666666667
+    },
+    {
+      "label": "malicious",
+      "category": "date_time_reexpression",
+      "n": 60,
+      "a1_review_rate": 0.4,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.4
+    },
+    {
+      "label": "malicious",
+      "category": "endpoint_reexpression",
+      "n": 60,
+      "a1_review_rate": 0.5166666666666667,
+      "a2_review_rate": 1.0,
+      "a3_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "full_attribute_paraphrase",
+      "n": 60,
+      "a1_review_rate": 1.0,
+      "a2_review_rate": 1.0,
+      "a3_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "indirect_reconstruction",
+      "n": 60,
+      "a1_review_rate": 0.38333333333333336,
+      "a2_review_rate": 1.0,
+      "a3_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "minimal_credential_fact",
+      "n": 60,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "minimal_endpoint_fact",
+      "n": 60,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.0,
+      "a3_review_rate": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "mixed_sensitive_context",
+      "n": 60,
+      "a1_review_rate": 0.26666666666666666,
+      "a2_review_rate": 1.0,
+      "a3_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "partial_sensitive_derivation",
+      "n": 60,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 1.0,
+      "a3_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "reordered_multi_fact",
+      "n": 60,
+      "a1_review_rate": 0.016666666666666666,
+      "a2_review_rate": 1.0,
+      "a3_review_rate": 1.0
+    }
+  ],
+  "reporting_constraint": "A1/A2/A3 are review signals. They must not be merged into P11 hard-detection results."
+}
