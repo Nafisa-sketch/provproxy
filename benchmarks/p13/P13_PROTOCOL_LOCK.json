@@ -1,0 +1,174 @@
+﻿{
+  "experiment": "P13 provenance-specific semantic verification",
+  "version": "p13-v2",
+  "status": "PROTOCOL_LOCKED_PRE_DEVELOPMENT_CORPUS",
+
+  "research_question": "Can provenance-specific attribute verification distinguish meaning-preserving sensitive derivation from merely topical or structural semantic similarity more effectively than generic whole-sentence similarity on the same frozen cases?",
+
+  "motivation": {
+    "p11_is_frozen": true,
+    "p12_is_frozen": true,
+    "p12_primary_threshold": 0.60,
+    "p12_malicious_review_rate": 0.6716666666666666,
+    "p12_benign_review_fpr": 0.39666666666666667,
+    "p12_semantic_precision": 0.6287051482059283,
+    "p12_posthoc_conclusion": "Generic sentence-level similarity showed substantial malicious/benign score overlap and no practically useful low-FPR operating point.",
+    "interpretation": "P13 tests whether source-specific attribute agreement provides a more discriminative semantic provenance signal than unrestricted topical similarity."
+  },
+
+  "frozen_prior_work": {
+    "core_configuration": "P11 B5 frozen",
+    "p12_generic_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "p12_generic_threshold": 0.60,
+    "modify_core_detector": false,
+    "modify_p11_corpus_or_results": false,
+    "modify_p12_corpus_or_results": false
+  },
+
+  "hypotheses": {
+    "primary": "On the same frozen P13 final cases, provenance-specific attribute verification will provide a better malicious-recovery versus benign-review trade-off than generic MiniLM cosine review at the frozen threshold of 0.60.",
+    "null": "Attribute-specific verification provides no material improvement in the malicious-recovery versus benign-review trade-off relative to generic semantic similarity on the same P13 final cases."
+  },
+
+  "experimental_phases": {
+    "phase_1_development": {
+      "purpose": "Design and calibrate the attribute verifier without access to the final P13 corpus.",
+      "separate_corpus_required": true,
+      "detector_blind_generator": true,
+      "development_results_may_inform_rule": true,
+      "development_cases_must_never_appear_in_final_corpus": true
+    },
+
+    "phase_2_rule_freeze": {
+      "freeze_attribute_extraction": true,
+      "freeze_attribute_scoring": true,
+      "freeze_review_thresholds": true,
+      "freeze_combination_rule": true,
+      "commit_before_final_corpus_evaluation": true
+    },
+
+    "phase_3_final_evaluation": {
+      "new_independent_corpus_required": true,
+      "freeze_corpus_before_detector_execution": true,
+      "no_rule_changes_after_first_final_score": true,
+      "preserve_all_failures": true
+    }
+  },
+
+  "provenance_attributes": {
+    "families": [
+      "entity_or_project",
+      "date",
+      "time",
+      "credential_or_numeric_secret",
+      "endpoint_or_host",
+      "port",
+      "location_or_cluster"
+    ],
+
+    "principle": "Evidence must correspond to source-specific facts rather than unrestricted semantic relatedness.",
+
+    "numeric_equivalence_examples": [
+      "108236 <-> one zero eight two three six",
+      "8081 <-> eight zero eight one",
+      "2028-08-12 <-> August 12 2028"
+    ],
+
+    "requirements": {
+      "case_label_must_not_be_used_at_inference": true,
+      "ground_truth_maliciousness_must_not_be_used_in_scoring": true,
+      "source_text_may_be_used_as_reference": true,
+      "outbound_candidate_text_may_be_used": true,
+      "lexical_core_must_not_be_modified": true,
+      "semantic_outputs_remain_review_only": true
+    }
+  },
+
+  "ablation_plan": {
+    "A0": "Frozen P11 B5 lexical core",
+    "A1": "Generic MiniLM whole-sentence similarity at fixed threshold 0.60, evaluated on P13 final corpus",
+    "A2": "Frozen P13 provenance-specific attribute verifier",
+    "A3": "Generic semantic review plus frozen attribute verifier"
+  },
+
+  "fair_comparison_rule": {
+    "A1_and_A2_use_exact_same_final_cases": true,
+    "P12_403_of_600_is_not_used_as_the_P13_numeric_baseline": true,
+    "p12_results_are_motivation_only": true,
+    "primary_comparison": "A2 versus A1 on the frozen P13 final corpus",
+    "secondary_comparison": "A3 versus A1 on the frozen P13 final corpus"
+  },
+
+  "corpus_requirements": {
+    "synthetic_only": true,
+    "real_pii": false,
+    "real_credentials": false,
+    "live_network_execution": false,
+
+    "generator_must_not_import_provproxy": true,
+    "generator_must_not_load_semantic_model": true,
+    "generator_must_not_read_detector_scores": true,
+    "generator_must_not_read_p12_case_scores": true,
+
+    "unique_source_per_malicious_case": true,
+    "require_same_topic_hard_negatives": true,
+    "require_same_structure_hard_negatives": true,
+    "require_attribute_collision_hard_negatives": true,
+    "require_partial_attribute_overlap_controls": true,
+    "require_numeric_hard_negatives": true,
+    "require_cross_label_structural_overlap": true
+  },
+
+  "primary_metrics": {
+    "malicious_review_rate": true,
+    "benign_review_fpr": true,
+    "semantic_precision": true,
+    "balanced_accuracy": true,
+    "wilson_95_ci": true,
+    "paired_mcnemar_malicious": true,
+    "paired_mcnemar_benign": true,
+    "p50_latency_ms": true,
+    "p95_latency_ms": true
+  },
+
+  "paired_comparisons": {
+    "malicious": {
+      "A1_miss_A2_hit": true,
+      "A1_hit_A2_miss": true,
+      "exact_two_sided_mcnemar": true
+    },
+
+    "benign": {
+      "A1_false_review_A2_clean": true,
+      "A1_clean_A2_false_review": true,
+      "exact_two_sided_mcnemar": true
+    }
+  },
+
+  "success_definition": {
+    "no_fixed_detection_target": true,
+    "no_fixed_fpr_target": true,
+    "primary_evidence_of_improvement": "A2 must show a more favorable paired malicious-recovery/benign-review trade-off than A1 on the same final corpus.",
+    "negative_result_is_valid": true
+  },
+
+  "anti_tuning_rules": {
+    "do_not_retune_on_final_test_set": true,
+    "do_not_change_attributes_after_final_execution": true,
+    "do_not_change_threshold_after_final_execution": true,
+    "do_not_remove_hard_negatives_after_scoring": true,
+    "do_not_replace_failed_cases": true,
+    "do_not_report_posthoc_optimum_as_primary": true
+  },
+
+  "reporting_constraints": {
+    "report_negative_results": true,
+    "do_not_replace_p11_headline_results": true,
+    "do_not_replace_p12_frozen_results": true,
+    "semantic_outputs_remain_review_signals": true,
+    "distinguish_review_from_hard_detection": true,
+    "distinguish_detection_from_enforcement": true,
+    "development_results_must_be_labeled_development": true,
+    "final_results_must_be_labeled_frozen_independent_evaluation": true
+  }
+}
