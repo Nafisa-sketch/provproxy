@@ -1,0 +1,28 @@
+﻿{
+  "experiment": "P13 final independent corpus",
+  "status": "FINAL_CORPUS_FROZEN_BEFORE_FIRST_DETECTOR_EXECUTION",
+  "protocol_commit": "a0b3bc3",
+  "attribute_rule_commit": "4dfed2d",
+  "final_generator_commit": "aeddc54",
+  "seed": 20260817,
+  "cases": 1200,
+  "malicious": 600,
+  "benign": 600,
+  "corpus_sha256": "C2EF14D344B0B34AD87D8736616AC4F3586FF61BFABAE0F37FED79289E5CAB31",
+  "development_overlap": {
+    "exact_source_overlap": 0,
+    "case_id_overlap": 0,
+    "source_id_overlap": 0
+  },
+  "audit": {
+    "passed": true,
+    "structural_shortcut_max_accuracy": 0.5,
+    "source_schema_compatible": "1200/1200",
+    "literal_full_source_leakage": 0,
+    "base64_full_source_leakage": 0,
+    "hex_full_source_leakage": 0
+  },
+  "detector_executed_before_freeze": false,
+  "semantic_model_executed_before_freeze": false,
+  "no_rule_changes_after_this_point": true
+}
