@@ -1,0 +1,71 @@
+﻿{
+  "experiment": "P13 provenance-specific semantic verification",
+  "phase": "D3 verifier rule freeze",
+  "status": "ATTRIBUTE_RULE_FROZEN_BEFORE_FINAL_CORPUS",
+
+  "development_corpus": {
+    "sha256": "00F0FB3B957D3C743C5CFA67467C0ABCEA6DCF7D3AB2D1D9E4712B6A4E32C789",
+    "cases": 360,
+    "malicious": 180,
+    "benign": 180,
+    "development_only": true
+  },
+
+  "generic_baseline": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "threshold": 0.60,
+    "development_dr": 0.517,
+    "development_fpr": 0.456,
+    "development_precision": 0.531,
+    "development_balanced_accuracy": 0.531
+  },
+
+  "frozen_attribute_rule": {
+    "score_threshold": 4.5,
+    "min_sensitive_matches": 1,
+    "action": "review_only",
+    "hard_match": false
+  },
+
+  "development_performance": {
+    "dr": 0.833,
+    "fpr": 0.006,
+    "precision": 0.993,
+    "balanced_accuracy": 0.914
+  },
+
+  "selection_rationale": {
+    "note": "The 4.5 threshold was selected on the development-only corpus before any final P13 corpus existed.",
+    "reason": "It achieved the joint-best development balanced accuracy while producing substantially lower benign-review FPR and higher precision than lower-threshold operating points.",
+    "alternative_same_ba": {
+      "score_threshold": 2.5,
+      "min_sensitive_matches": 1,
+      "dr": 1.0,
+      "fpr": 0.172,
+      "precision": 0.853,
+      "balanced_accuracy": 0.914
+    }
+  },
+
+  "paired_development_comparison": {
+    "malicious": {
+      "A1_miss_A2_hit": 57,
+      "A1_hit_A2_miss": 0,
+      "mcnemar_p": 1.3877788e-17
+    },
+    "benign": {
+      "A1_false_A2_clean": 82,
+      "A1_clean_A2_false": 1,
+      "mcnemar_p": 1.7370793e-23
+    }
+  },
+
+  "anti_tuning_lock": {
+    "do_not_change_weights_after_final_corpus_generation": true,
+    "do_not_change_score_threshold_after_final_corpus_generation": true,
+    "do_not_change_min_sensitive_matches_after_final_corpus_generation": true,
+    "do_not_modify_attribute_extraction_after_final_corpus_generation": true,
+    "do_not_remove_final_failures": true,
+    "development_results_not_final_evidence": true
+  }
+}

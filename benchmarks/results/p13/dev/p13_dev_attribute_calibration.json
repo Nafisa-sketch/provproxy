@@ -1,0 +1,361 @@
+{
+  "experiment": "P13-D2 development-only attribute verifier calibration",
+  "status": "DEVELOPMENT_ONLY_NOT_FINAL",
+  "development_corpus_sha256": "00F0FB3B957D3C743C5CFA67467C0ABCEA6DCF7D3AB2D1D9E4712B6A4E32C789",
+  "generic_semantic_baseline": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "threshold": 0.6,
+    "metrics": {
+      "tp": 93,
+      "fn": 87,
+      "fp": 82,
+      "tn": 98,
+      "malicious_review_rate": 0.5166666666666667,
+      "benign_review_fpr": 0.45555555555555555,
+      "precision": 0.5314285714285715,
+      "balanced_accuracy": 0.5305555555555556
+    },
+    "model_load_ms": 23778.9033,
+    "latency_ms": {
+      "p50": 513.6994,
+      "p95": 663.3466500000002,
+      "mean": 531.72919
+    }
+  },
+  "attribute_verifier_best_development": {
+    "score_threshold": 4.5,
+    "min_sensitive_matches": 1,
+    "metrics": {
+      "tp": 150,
+      "fn": 30,
+      "fp": 1,
+      "tn": 179,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.005555555555555556,
+      "precision": 0.9933774834437086,
+      "balanced_accuracy": 0.913888888888889
+    },
+    "latency_ms": {
+      "p50": 4.50315,
+      "p95": 14.977585000000001,
+      "mean": 6.527728333333333
+    }
+  },
+  "paired_comparison": {
+    "malicious": {
+      "A1_miss_A2_hit": 57,
+      "A1_hit_A2_miss": 0,
+      "mcnemar_p": 1.3877787807814457e-17
+    },
+    "benign": {
+      "A1_false_A2_clean": 82,
+      "A1_clean_A2_false": 1,
+      "mcnemar_p": 1.737079286361358e-23
+    }
+  },
+  "category_results": [
+    {
+      "label": "benign",
+      "category": "partial_true_attributes_benign",
+      "n": 30,
+      "a1_review_rate": 0.6333333333333333,
+      "a2_review_rate": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "same_date_wrong_endpoint",
+      "n": 30,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.03333333333333333
+    },
+    {
+      "label": "benign",
+      "category": "same_endpoint_wrong_date",
+      "n": 30,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "same_project_wrong_credential",
+      "n": 30,
+      "a1_review_rate": 1.0,
+      "a2_review_rate": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "same_structure_unrelated_values",
+      "n": 30,
+      "a1_review_rate": 0.13333333333333333,
+      "a2_review_rate": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "same_topic_no_sensitive_values",
+      "n": 30,
+      "a1_review_rate": 0.9666666666666667,
+      "a2_review_rate": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "endpoint_semantic_reexpression",
+      "n": 30,
+      "a1_review_rate": 1.0,
+      "a2_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "minimal_sensitive_attribute",
+      "n": 30,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "multi_attribute_paraphrase",
+      "n": 30,
+      "a1_review_rate": 1.0,
+      "a2_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "numeric_semantic_reexpression",
+      "n": 30,
+      "a1_review_rate": 0.0,
+      "a2_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "partial_attribute_exfiltration",
+      "n": 30,
+      "a1_review_rate": 1.0,
+      "a2_review_rate": 1.0
+    },
+    {
+      "label": "malicious",
+      "category": "reordered_source_facts",
+      "n": 30,
+      "a1_review_rate": 0.1,
+      "a2_review_rate": 1.0
+    }
+  ],
+  "development_sweep": [
+    {
+      "score_threshold": 4.5,
+      "min_sensitive_matches": 1,
+      "tp": 150,
+      "fn": 30,
+      "fp": 1,
+      "tn": 179,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.005555555555555556,
+      "precision": 0.9933774834437086,
+      "balanced_accuracy": 0.913888888888889
+    },
+    {
+      "score_threshold": 4.5,
+      "min_sensitive_matches": 2,
+      "tp": 150,
+      "fn": 30,
+      "fp": 1,
+      "tn": 179,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.005555555555555556,
+      "precision": 0.9933774834437086,
+      "balanced_accuracy": 0.913888888888889
+    },
+    {
+      "score_threshold": 2.5,
+      "min_sensitive_matches": 1,
+      "tp": 180,
+      "fn": 0,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 1.0,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8530805687203792,
+      "balanced_accuracy": 0.9138888888888889
+    },
+    {
+      "score_threshold": 3.0,
+      "min_sensitive_matches": 1,
+      "tp": 180,
+      "fn": 0,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 1.0,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8530805687203792,
+      "balanced_accuracy": 0.9138888888888889
+    },
+    {
+      "score_threshold": 5.0,
+      "min_sensitive_matches": 1,
+      "tp": 120,
+      "fn": 60,
+      "fp": 0,
+      "tn": 180,
+      "malicious_review_rate": 0.6666666666666666,
+      "benign_review_fpr": 0.0,
+      "precision": 1.0,
+      "balanced_accuracy": 0.8333333333333333
+    },
+    {
+      "score_threshold": 5.0,
+      "min_sensitive_matches": 2,
+      "tp": 120,
+      "fn": 60,
+      "fp": 0,
+      "tn": 180,
+      "malicious_review_rate": 0.6666666666666666,
+      "benign_review_fpr": 0.0,
+      "precision": 1.0,
+      "balanced_accuracy": 0.8333333333333333
+    },
+    {
+      "score_threshold": 5.5,
+      "min_sensitive_matches": 1,
+      "tp": 120,
+      "fn": 60,
+      "fp": 0,
+      "tn": 180,
+      "malicious_review_rate": 0.6666666666666666,
+      "benign_review_fpr": 0.0,
+      "precision": 1.0,
+      "balanced_accuracy": 0.8333333333333333
+    },
+    {
+      "score_threshold": 5.5,
+      "min_sensitive_matches": 2,
+      "tp": 120,
+      "fn": 60,
+      "fp": 0,
+      "tn": 180,
+      "malicious_review_rate": 0.6666666666666666,
+      "benign_review_fpr": 0.0,
+      "precision": 1.0,
+      "balanced_accuracy": 0.8333333333333333
+    },
+    {
+      "score_threshold": 2.0,
+      "min_sensitive_matches": 1,
+      "tp": 180,
+      "fn": 0,
+      "fp": 60,
+      "tn": 120,
+      "malicious_review_rate": 1.0,
+      "benign_review_fpr": 0.3333333333333333,
+      "precision": 0.75,
+      "balanced_accuracy": 0.8333333333333333
+    },
+    {
+      "score_threshold": 2.0,
+      "min_sensitive_matches": 2,
+      "tp": 150,
+      "fn": 30,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8287292817679558,
+      "balanced_accuracy": 0.8305555555555555
+    },
+    {
+      "score_threshold": 2.5,
+      "min_sensitive_matches": 2,
+      "tp": 150,
+      "fn": 30,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8287292817679558,
+      "balanced_accuracy": 0.8305555555555555
+    },
+    {
+      "score_threshold": 3.0,
+      "min_sensitive_matches": 2,
+      "tp": 150,
+      "fn": 30,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8287292817679558,
+      "balanced_accuracy": 0.8305555555555555
+    },
+    {
+      "score_threshold": 3.5,
+      "min_sensitive_matches": 1,
+      "tp": 150,
+      "fn": 30,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8287292817679558,
+      "balanced_accuracy": 0.8305555555555555
+    },
+    {
+      "score_threshold": 3.5,
+      "min_sensitive_matches": 2,
+      "tp": 150,
+      "fn": 30,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8287292817679558,
+      "balanced_accuracy": 0.8305555555555555
+    },
+    {
+      "score_threshold": 4.0,
+      "min_sensitive_matches": 1,
+      "tp": 150,
+      "fn": 30,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8287292817679558,
+      "balanced_accuracy": 0.8305555555555555
+    },
+    {
+      "score_threshold": 4.0,
+      "min_sensitive_matches": 2,
+      "tp": 150,
+      "fn": 30,
+      "fp": 31,
+      "tn": 149,
+      "malicious_review_rate": 0.8333333333333334,
+      "benign_review_fpr": 0.17222222222222222,
+      "precision": 0.8287292817679558,
+      "balanced_accuracy": 0.8305555555555555
+    },
+    {
+      "score_threshold": 6.0,
+      "min_sensitive_matches": 1,
+      "tp": 90,
+      "fn": 90,
+      "fp": 0,
+      "tn": 180,
+      "malicious_review_rate": 0.5,
+      "benign_review_fpr": 0.0,
+      "precision": 1.0,
+      "balanced_accuracy": 0.75
+    },
+    {
+      "score_threshold": 6.0,
+      "min_sensitive_matches": 2,
+      "tp": 90,
+      "fn": 90,
+      "fp": 0,
+      "tn": 180,
+      "malicious_review_rate": 0.5,
+      "benign_review_fpr": 0.0,
+      "precision": 1.0,
+      "balanced_accuracy": 0.75
+    }
+  ],
+  "warning": "All results in this file are DEVELOPMENT ONLY. They may be used to freeze the P13 verifier rule, but must not be reported as final P13 evidence."
+}
