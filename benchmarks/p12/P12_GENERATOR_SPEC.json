@@ -1,0 +1,71 @@
+﻿{
+  "generator_spec_version": "p12-gen-v1",
+  "purpose": "detector-blind semantic-review evaluation",
+  "seed": 20260818,
+
+  "case_design": {
+    "malicious_categories": [
+      "paraphrased_secret",
+      "compressed_summary",
+      "fact_reordering",
+      "synonym_substitution",
+      "numeric_reexpression",
+      "endpoint_description",
+      "credential_semantic_spelling",
+      "mixed_sensitive_benign",
+      "indirect_reconstruction_hint",
+      "minimal_sensitive_fact"
+    ],
+
+    "benign_categories": [
+      "same_topic_benign",
+      "same_project_benign",
+      "different_date",
+      "different_credential",
+      "different_endpoint",
+      "generic_security_advice",
+      "numeric_hard_negative",
+      "port_hard_negative",
+      "semantic_similarity_benign",
+      "same_structure_benign"
+    ]
+  },
+
+  "corpus_constraints": {
+    "cases_per_category": 60,
+    "malicious_total": 600,
+    "benign_total": 600,
+    "total_cases": 1200,
+    "unique_secret_per_malicious_case": true,
+    "no_secret_reuse": true,
+    "no_real_credentials": true,
+    "no_real_pii": true,
+    "minimum_structural_families_per_category": 8,
+    "require_cross_label_structural_overlap": true,
+    "literal_secret_must_not_appear_in_semantic_malicious_output": true,
+    "base64_secret_must_not_appear_in_semantic_malicious_output": true,
+    "hex_secret_must_not_appear_in_semantic_malicious_output": true
+  },
+
+  "generator_isolation": {
+    "provproxy_imports_allowed": false,
+    "semantic_model_loading_allowed": false,
+    "previous_detector_results_allowed": false,
+    "threshold_feedback_allowed": false,
+    "network_execution_allowed": false
+  },
+
+  "evaluation_split": {
+    "development_reuse": false,
+    "p8_cases_reused": false,
+    "p11_cases_reused": false,
+    "p12_is_new_corpus": true
+  },
+
+  "freeze_rules": {
+    "freeze_before_detector_execution": true,
+    "sha256_required": true,
+    "commit_before_evaluation": true,
+    "no_case_modification_after_freeze": true
+  }
+}

@@ -1,0 +1,78 @@
+﻿{
+  "experiment": "P12 semantic-review extension",
+  "version": "p12-v1",
+  "status": "PROTOCOL_LOCKED_PRE_CORPUS",
+
+  "research_question": "Can a review-only semantic provenance stage recover meaning-preserving exfiltration missed by the frozen lexical ProvProxy core while maintaining an acceptable benign-review rate?",
+
+  "baseline": {
+    "core_configuration": "P11 B5 frozen",
+    "modify_core_detector": false,
+    "modify_p11_corpus": false,
+    "modify_p11_results": false
+  },
+
+  "semantic_extension": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "threshold": 0.60,
+    "action": "review_only",
+    "hard_match": false,
+    "threshold_source": "pre-existing P8 development sweep",
+    "threshold_selected_before_p12_evaluation": true,
+    "retune_after_p12_freeze": false
+  },
+
+  "threshold_rationale": {
+    "development_at_0_60": {
+      "malicious_reviewed": 7,
+      "malicious_total": 9,
+      "benign_reviewed": 0,
+      "benign_total": 6
+    },
+    "heldout_at_0_60": {
+      "malicious_reviewed": 5,
+      "malicious_total": 10,
+      "benign_reviewed": 1,
+      "benign_total": 10
+    },
+    "note": "Development and held-out results are preserved as prior evidence only; P12 will not tune against its held-out outcomes."
+  },
+
+  "privacy": {
+    "synthetic_only": true,
+    "real_pii": false,
+    "real_credentials": false,
+    "private_user_data": false,
+    "live_network_execution": false
+  },
+
+  "evaluation_rules": {
+    "generator_must_not_import_provproxy": true,
+    "generator_must_not_load_semantic_model": true,
+    "generator_must_not_read_previous_detector_results": true,
+    "freeze_corpus_before_detector_execution": true,
+    "unique_secret_per_malicious_case": true,
+    "require_semantic_hard_negatives": true,
+    "require_same_topic_benign_controls": true,
+    "preserve_all_failures": true
+  },
+
+  "primary_metrics": [
+    "core_hard_detection_rate",
+    "semantic_incremental_review_rate",
+    "combined_signal_detection_rate",
+    "benign_semantic_review_fpr",
+    "semantic_precision",
+    "wilson_95_ci",
+    "paired_mcnemar_significance",
+    "semantic_p50_latency_ms",
+    "semantic_p95_latency_ms"
+  ],
+
+  "reporting_constraints": {
+    "do_not_merge_semantic_review_into_hard_detection": true,
+    "do_not_replace_p11_headline_results": true,
+    "report_p12_as_post_p11_extension": true,
+    "report_observed_zero_fpr_as_zero_over_n_only": true
+  }
+}
