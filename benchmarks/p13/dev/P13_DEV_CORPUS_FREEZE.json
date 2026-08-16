@@ -1,0 +1,17 @@
+﻿{
+  "experiment": "P13 development corpus",
+  "status": "DEVELOPMENT_CORPUS_FROZEN_BEFORE_VERIFIER_DEVELOPMENT",
+  "protocol_commit": "a0b3bc3",
+  "generator_commit": "9ddecfe",
+  "seed": 20260816,
+  "cases": 360,
+  "malicious": 180,
+  "benign": 180,
+  "corpus_sha256": "00F0FB3B957D3C743C5CFA67467C0ABCEA6DCF7D3AB2D1D9E4712B6A4E32C789",
+  "development_only": true,
+  "may_inform_verifier_design": true,
+  "must_not_appear_in_final_p13_corpus": true,
+  "detector_executed_before_freeze": false,
+  "semantic_model_executed_before_freeze": false,
+  "corpus_audit_passed": true
+}
