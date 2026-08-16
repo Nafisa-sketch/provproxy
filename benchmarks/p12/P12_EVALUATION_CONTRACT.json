@@ -1,0 +1,81 @@
+﻿{
+  "experiment": "P12 semantic-review extension",
+  "evaluation_contract_version": "p12-eval-v1",
+  "status": "LOCKED_BEFORE_DETECTOR_EXECUTION",
+
+  "inputs": {
+    "corpus": "benchmarks/p12/fixtures/p12_semantic_corpus.jsonl",
+    "expected_corpus_sha256": "4151C19567D24A52DCF8CB30B3575872680E1CE506C658FD6480F3C3A2334020",
+    "protocol": "benchmarks/p12/P12_PROTOCOL_LOCK.json",
+    "freeze_manifest": "benchmarks/p12/P12_CORPUS_FREEZE.json"
+  },
+
+  "frozen_configuration": {
+    "core_configuration": "P11 B5 frozen",
+    "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "semantic_threshold": 0.60,
+    "semantic_action": "review_only",
+    "retuning_allowed": false
+  },
+
+  "decision_semantics": {
+    "core_hard_match": "Frozen lexical ProvProxy core produces a hard provenance match.",
+    "semantic_review": "Semantic extension score is >= 0.60 and requests review only.",
+    "combined_signal": "core_hard_match OR semantic_review",
+    "semantic_review_is_hard_match": false,
+    "semantic_review_is_containment": false
+  },
+
+  "primary_metrics": {
+    "core_hard_detection_rate": true,
+    "semantic_incremental_review_rate": true,
+    "combined_signal_detection_rate": true,
+    "benign_semantic_review_fpr": true,
+    "semantic_precision": true,
+    "wilson_95_ci": true,
+    "paired_mcnemar": true
+  },
+
+  "paired_analysis": {
+    "comparison": "core_hard_match vs combined_signal",
+    "unit": "same frozen P12 case",
+    "malicious_primary": true,
+    "benign_reported_separately": true,
+    "two_sided_exact_mcnemar": true
+  },
+
+  "latency": {
+    "model_load_reported_separately": true,
+    "steady_state_semantic_p50_ms": true,
+    "steady_state_semantic_p95_ms": true,
+    "steady_state_semantic_p99_ms": true,
+    "do_not_mix_model_load_with_per_case_latency": true
+  },
+
+  "required_outputs": [
+    "p12_results.jsonl",
+    "p12_summary.json",
+    "p12_summary.md",
+    "p12_category_summary.csv",
+    "p12_failures.md"
+  ],
+
+  "integrity_rules": {
+    "verify_corpus_hash_before_run": true,
+    "verify_corpus_hash_after_run": true,
+    "abort_on_hash_mismatch": true,
+    "preserve_all_failures": true,
+    "do_not_modify_p11": true,
+    "do_not_modify_core_detector": true,
+    "do_not_modify_p12_corpus": true,
+    "do_not_retune_threshold": true
+  },
+
+  "reporting_rules": {
+    "p12_is_post_p11_extension": true,
+    "p11_remains_headline_evaluation": true,
+    "semantic_review_never_reported_as_hard_detection": true,
+    "observed_zero_fpr_reported_as_zero_over_n": true,
+    "negative_results_must_be_reported": true
+  }
+}
