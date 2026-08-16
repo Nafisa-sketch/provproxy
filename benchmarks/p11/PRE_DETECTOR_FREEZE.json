@@ -1,0 +1,43 @@
+﻿{
+  "protocol": "P11-v1",
+  "status": "FROZEN_BEFORE_DETECTOR_EVALUATION",
+  "corpus_sha256": "2BB245B0CEDA6462253B3D25E7E76B6676FB91A6A4BA4B965EA3C8B35E8B63E4",
+  "cases": 1440,
+  "malicious": 800,
+  "benign": 640,
+  "seed": 20260817,
+
+  "pre_detector_audits": {
+    "generator_isolation": "PASS",
+    "actual_min_structural_templates_per_category": 30,
+    "cross_label_shared_structures": 56,
+    "unique_case_ids": 1440,
+    "unique_synthetic_secrets": 1440,
+    "semantic_literal_leakage": 0,
+    "semantic_base64_leakage": 0,
+    "semantic_hex_leakage": 0,
+
+    "heldout_shortcut_baselines": {
+      "majority_accuracy": 0.556,
+      "majority_f1": 0.714,
+      "tool_multiset_accuracy": 0.630,
+      "tool_multiset_f1": 0.563,
+      "argument_key_accuracy": 0.657,
+      "argument_key_f1": 0.651
+    }
+  },
+
+  "interpretation_locked_before_detector": {
+    "structural_shortcuts_present": true,
+    "structural_shortcuts_catastrophic": false,
+    "benchmark_claim": "detector-blind generator-independent synthetic corpus audited for structural shortcuts",
+    "forbidden_claim": "zero benchmark bias"
+  },
+
+  "privacy": {
+    "synthetic_only": true,
+    "real_pii": false,
+    "real_credentials": false,
+    "live_network_execution": false
+  }
+}
