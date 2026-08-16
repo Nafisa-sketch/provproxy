@@ -1,0 +1,51 @@
+{
+  "benign": {
+    "n": 600,
+    "semantic_review_fpr": 0.39666666666666667,
+    "semantic_review_fpr_ci95": [
+      0.3582993250577213,
+      0.4363487598184436
+    ],
+    "semantic_reviewed": 238
+  },
+  "corpus_hash_unchanged": true,
+  "corpus_sha256_after": "4151C19567D24A52DCF8CB30B3575872680E1CE506C658FD6480F3C3A2334020",
+  "corpus_sha256_before": "4151C19567D24A52DCF8CB30B3575872680E1CE506C658FD6480F3C3A2334020",
+  "experiment": "P12 semantic-review extension",
+  "malicious": {
+    "combined_detected": 403,
+    "combined_signal_detection_ci95": [
+      0.6331026902153442,
+      0.7080464591032852
+    ],
+    "combined_signal_detection_rate": 0.6716666666666666,
+    "core_hard_detected": 0,
+    "core_hard_detection_ci95": [
+      4.336808689942018e-19,
+      0.00636170101370071
+    ],
+    "core_hard_detection_rate": 0.0,
+    "n": 600,
+    "semantic_incremental": 403,
+    "semantic_incremental_rate": 0.6716666666666666,
+    "semantic_review_rate": 0.6716666666666666,
+    "semantic_reviewed": 403
+  },
+  "paired_mcnemar_malicious": {
+    "core_hit_combined_miss": 0,
+    "core_miss_combined_hit": 403,
+    "p_value": 9.681479787123296e-122
+  },
+  "semantic_action": "review_only",
+  "semantic_latency_ms": {
+    "max": 1439.5167,
+    "mean": 402.93423633333333,
+    "p50": 396.2767,
+    "p95": 454.046205,
+    "p99": 614.9923249999999
+  },
+  "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "semantic_model_load_ms": 210680.5445,
+  "semantic_precision": 0.6287051482059283,
+  "semantic_threshold": 0.6
+}
