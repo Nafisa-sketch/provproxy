@@ -1,0 +1,47 @@
+﻿{
+  "experiment": "P12 semantic-review extension",
+  "corpus_version": "p12-v1",
+  "status": "FROZEN_PRE_DETECTOR",
+  "seed": 20260818,
+
+  "corpus": {
+    "path": "benchmarks/p12/fixtures/p12_semantic_corpus.jsonl",
+    "sha256": "4151C19567D24A52DCF8CB30B3575872680E1CE506C658FD6480F3C3A2334020",
+    "total_cases": 1200,
+    "malicious": 600,
+    "benign": 600,
+    "categories": 20,
+    "cases_per_category": 60
+  },
+
+  "pre_detector_audits": {
+    "deterministic_generation": true,
+    "generator_isolation_passed": true,
+    "hostile_corpus_audit_passed": true,
+    "structural_shortcut_audit_passed": true,
+
+    "duplicate_case_ids": 0,
+    "secret_reuse": 0,
+    "literal_full_source_leakage": 0,
+    "base64_full_source_leakage": 0,
+    "hex_full_source_leakage": 0,
+
+    "highest_nonsemantic_shortcut_accuracy": 0.450
+  },
+
+  "semantic_configuration": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "threshold": 0.60,
+    "action": "review_only",
+    "threshold_frozen_before_evaluation": true
+  },
+
+  "evaluation_constraints": {
+    "p11_unchanged": true,
+    "core_b5_unchanged": true,
+    "network_execution": false,
+    "semantic_model_not_used_during_generation": true,
+    "no_detector_tuning_after_freeze": true,
+    "preserve_failures": true
+  }
+}
