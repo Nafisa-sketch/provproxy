@@ -1,0 +1,82 @@
+{
+  "scope": "Controlled functional ablation. These are ProvProxy variants, not independent external products.",
+  "rows": [
+    {
+      "configuration": "B0 / V0",
+      "capability": "Stateless policy baseline",
+      "detection_rate": 0.0,
+      "enforcement_fpr": 0.0,
+      "p50_ms": 0.003100140020251274,
+      "p95_ms": 0.004699919372797012,
+      "p99_ms": 0.007262846920639288,
+      "peak_kb": 80.847,
+      "distributed_destination_exposure": null,
+      "notes": "No provenance correlation."
+    },
+    {
+      "configuration": "B1 / V1",
+      "capability": "Exact provenance",
+      "detection_rate": 0.25,
+      "enforcement_fpr": 0.0,
+      "p50_ms": 0.016700010746717453,
+      "p95_ms": 0.026699865702539682,
+      "p99_ms": 0.3075149888172746,
+      "peak_kb": 80.911,
+      "distributed_destination_exposure": null,
+      "notes": "Adds exact source-to-egress correlation."
+    },
+    {
+      "configuration": "B2 / V2",
+      "capability": "Exact + transformation-aware",
+      "detection_rate": 0.5,
+      "enforcement_fpr": 0.0,
+      "p50_ms": 0.08240004535764456,
+      "p95_ms": 0.2239049528725445,
+      "p99_ms": 0.35152097465470433,
+      "peak_kb": 80.87,
+      "distributed_destination_exposure": null,
+      "notes": "Adds bounded Base64/Hex/URL/JSON decoding."
+    },
+    {
+      "configuration": "B3 / V3",
+      "capability": "Exact + transform + approximate",
+      "detection_rate": 0.75,
+      "enforcement_fpr": 0.0,
+      "p50_ms": 0.12874999083578587,
+      "p95_ms": 0.2967100357636809,
+      "p99_ms": 0.3767150989733637,
+      "peak_kb": 82.345,
+      "distributed_destination_exposure": null,
+      "notes": "Adds N-gram approximate correlation."
+    },
+    {
+      "configuration": "B4 / V4",
+      "capability": "Exact + transform + approximate + cross-call",
+      "detection_rate": 1.0,
+      "enforcement_fpr": 0.0,
+      "p50_ms": 0.23809995036572218,
+      "p95_ms": 0.43870996451005334,
+      "p99_ms": 0.5688299075700344,
+      "peak_kb": 86.916,
+      "distributed_destination_exposure": 1.0,
+      "notes": "Adds per-session/per-destination accumulation."
+    },
+    {
+      "configuration": "B5 / V4+fanout",
+      "capability": "V4 + cross-destination REVIEW",
+      "detection_rate": 1.0,
+      "enforcement_fpr": 0.0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "p99_ms": null,
+      "peak_kb": null,
+      "distributed_destination_exposure": 0.2927,
+      "notes": "Fan-out is REVIEW-only. Core V4 metrics are not re-labeled as fan-out latency/memory measurements."
+    }
+  ],
+  "fanout_before_after": {
+    "strict_destination_exposure": 1.0,
+    "fanout_guard_exposure": 0.2927,
+    "absolute_reduction": 0.7073
+  }
+}

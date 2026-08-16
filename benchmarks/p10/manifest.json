@@ -1,0 +1,27 @@
+﻿{
+  "version": "p10-v1",
+  "frozen": true,
+  "seed": 20260816,
+  "categories": {
+    "malicious": [
+      "direct",
+      "encoded",
+      "intra_request_fragmented",
+      "cross_call_fragmented",
+      "interleaved",
+      "destination_rotation",
+      "destination_alias",
+      "semantic_paraphrase",
+      "partial_exfiltration"
+    ],
+    "benign": [
+      "same_topic",
+      "dummy_credentials",
+      "legitimate_encoding",
+      "approved_destination",
+      "common_substring",
+      "multi_tool_benign",
+      "semantic_similarity"
+    ]
+  }
+}

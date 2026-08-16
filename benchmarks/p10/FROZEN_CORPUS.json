@@ -1,0 +1,12 @@
+﻿{
+  "corpus_version": "p10-v1",
+  "seed": 20260816,
+  "cases": 1120,
+  "malicious": 630,
+  "benign": 490,
+  "sha256": "BEE095C7F2706437EFFDEBEC844A971D9F8467F3F4B261718152E908EC0E7844",
+  "semantic_review_in_core_ablation": false,
+  "network_execution": false,
+  "real_credentials": false,
+  "real_pii": false
+}

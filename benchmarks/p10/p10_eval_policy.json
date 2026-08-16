@@ -1,0 +1,50 @@
+﻿{
+  "version": "p10-eval-v1",
+  "active_tier": "v4",
+
+  "server_bindings": [
+    {
+      "server_id": "network-egress",
+      "tool_capabilities": {
+        "http_request": {
+          "allowed_domains": [
+            "approved.invalid"
+          ],
+          "blocked_domains": []
+        }
+      }
+    }
+  ],
+
+  "approx_matching": {
+    "ngram_size": 4,
+    "coverage_threshold": 0.6,
+    "sweep_thresholds": [0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+  },
+
+  "decode_limits": {
+    "max_candidate_len_bytes": 8192,
+    "max_candidates_per_payload": 256,
+    "max_expansion_ratio": 4.0,
+    "max_nesting_depth": 3
+  },
+
+  "cross_call_window": {
+    "window_seconds": 300,
+    "window_max_calls": 50
+  },
+
+  "persistence": {
+    "enabled": false,
+    "state_dir": ".provproxy_state_p10",
+    "fsync_every": 16,
+    "compact_every": 2000,
+    "fail_closed_on_corruption": true,
+    "allow_file_key_fallback": false
+  },
+
+  "enforcement": {
+    "on_match": "block",
+    "approval_timeout_seconds": 60
+  }
+}
