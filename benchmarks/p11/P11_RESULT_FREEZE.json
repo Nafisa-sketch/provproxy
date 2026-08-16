@@ -1,0 +1,38 @@
+﻿{
+  "evaluation": "P11 generator-independent frozen evaluation",
+  "corpus_sha256": "2BB245B0CEDA6462253B3D25E7E76B6676FB91A6A4BA4B965EA3C8B35E8B63E4",
+  "detector_tuning_after_freeze": false,
+  "network_execution": false,
+  "semantic_augmentation_core": false,
+
+  "principal_findings": {
+    "B1_to_B2_new_catches": 54,
+    "B1_to_B2_regressions": 0,
+    "B1_to_B2_mcnemar_p": 1.11022302463e-16,
+
+    "B2_to_B3_new_catches": 7,
+    "B2_to_B3_regressions": 0,
+    "B2_to_B3_mcnemar_p": 0.015625,
+
+    "B3_to_B4_new_catches": 13,
+    "B3_to_B4_regressions": 0,
+    "B3_to_B4_mcnemar_p": 0.000244140625,
+
+    "B4_to_B5_new_catches": 3,
+    "B4_to_B5_regressions": 0,
+    "B4_to_B5_mcnemar_p": 0.25
+  },
+
+  "interpretation": {
+    "B2": "significant incremental contribution",
+    "B3": "significant incremental contribution",
+    "B4": "significant incremental contribution",
+    "B5": "targeted review/containment extension; overall paired gain not statistically significant"
+  },
+
+  "known_failure_surfaces": {
+    "partial_exfiltration_signal_DR": 0.650,
+    "semantic_reformulation_signal_DR": 0.000,
+    "semantic_reformulation_note": "semantic augmentation intentionally excluded from core B0-B5"
+  }
+}
