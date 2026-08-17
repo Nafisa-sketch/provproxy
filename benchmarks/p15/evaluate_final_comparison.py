@@ -80,7 +80,7 @@ EXPECTED_NEMO_ENV_SHA256 = (
 
 EXPECTED_NEMO_VERSION = "0.23.0"
 
-PREFIX = "P15_RESULT\t"
+PREFIX = "P15_RESULT\\t"
 
 
 def sha256_file(path: Path) -> str:
