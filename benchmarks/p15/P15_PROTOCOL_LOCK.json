@@ -1,0 +1,139 @@
+﻿{
+  "experiment": "P15 production-oriented guardrail external validation",
+  "version": "p15-v1",
+  "status": "PROTOCOL_LOCKED_BEFORE_NEMO_INSTALLATION_AND_EVALUATION",
+
+  "research_question": "How does frozen ProvProxy compare with an independently configured deployment of NVIDIA NeMo Guardrails on matched agent/tool-security scenarios, particularly for direct, transformed, fragmented, and cross-call sensitive-data propagation?",
+
+  "comparison_systems": {
+    "provproxy": {
+      "configuration": "Frozen P11 B5",
+      "modify_detector": false,
+      "retune_after_results": false,
+      "reuse_frozen_results_where_methodologically_valid": true
+    },
+
+    "industry_framework": {
+      "name": "NVIDIA NeMo Guardrails",
+      "role": "production-oriented open-source guardrail framework",
+      "target_capability": "official IORails tool-calling validation",
+      "require_real_package_installation": true,
+      "require_version_capture": true,
+      "require_official_framework_execution": true,
+      "custom_provproxy_logic_inside_nemo_forbidden": true
+    }
+  },
+
+  "nemo_configuration_constraints": {
+    "use_official_documented_interfaces": true,
+    "prefer_iorails": true,
+    "require_iorails_when_tool_rails_are_evaluated": true,
+    "tool_call_validation": true,
+    "tool_result_validation": true,
+    "fail_closed_behavior_preserved": true,
+
+    "do_not_implement_cross_call_provenance_inside_nemo": true,
+    "do_not_implement_ngram_provenance_inside_nemo": true,
+    "do_not_copy_provproxy_matchers_into_nemo": true,
+
+    "custom_actions": {
+      "allowed": false,
+      "reason": "Adding ProvProxy-like custom provenance logic would turn the comparison into a comparison against our own algorithm embedded in NeMo."
+    }
+  },
+
+  "documented_nemo_scope": {
+    "tool_call_validation": "allowed tool identity plus JSON-Schema-valid arguments",
+    "tool_result_validation": "tool-call linkage, tool-name consistency, and well-formed result content",
+    "result_content_safety_check_by_tool_result_validation": false,
+    "server_verified_provenance": false,
+    "cross_turn_provenance_claimed": false
+  },
+
+  "evaluation_design": {
+    "primary_mode": "matched neutral scenario suite",
+    "do_not_use_p11_as_only_external_test": true,
+    "synthetic_only": true,
+    "real_credentials": false,
+    "real_pii": false,
+    "live_external_exfiltration": false,
+
+    "same_logical_cases_for_both_systems": true,
+    "adapter_specific_serialization_allowed": true,
+    "ground_truth_identical_across_systems": true,
+
+    "categories": [
+      "benign_valid_tool_call",
+      "invalid_tool_name_or_schema",
+      "direct_sensitive_exfiltration",
+      "encoded_sensitive_exfiltration",
+      "intra_request_fragmentation",
+      "cross_call_fragmentation",
+      "interleaved_cross_call_fragmentation",
+      "destination_rotation_or_fanout",
+      "same_topic_hard_negative",
+      "same_structure_hard_negative"
+    ]
+  },
+
+  "fairness_rules": {
+    "do_not_disable_documented_nemo_security_features_to_make_it_weaker": true,
+    "do_not_add_undocumented_provproxy_equivalent_logic_to_nemo": true,
+    "use_same_underlying_case_intent": true,
+    "preserve_framework_native_semantics": true,
+    "report_non_comparable_categories_as_non_comparable": true,
+    "do_not_convert_missing_capability_into_implementation_failure": true
+  },
+
+  "metrics": {
+    "overall_detection_rate": true,
+    "benign_false_positive_rate": true,
+    "precision": true,
+    "balanced_accuracy": true,
+    "f1": true,
+    "category_detection_rate": true,
+    "wilson_95_ci": true,
+    "paired_mcnemar_where_comparable": true,
+    "p50_latency_ms": true,
+    "p95_latency_ms": true,
+    "p99_latency_ms": true
+  },
+
+  "claim_constraints": {
+    "do_not_claim_universal_superiority": true,
+    "do_not_claim_nemo_is_stateless_in_general": true,
+    "do_not_claim_nemo_has_no_multi_turn_capabilities_in_general": true,
+    "do_not_claim_official_nemo_failure_before_execution": true,
+    "distinguish_tool_structure_validation_from_data_provenance": true,
+    "distinguish_detection_from_enforcement": true,
+    "distinguish_framework_scope_from_benchmark_outcome": true,
+    "negative_result_is_valid": true
+  },
+
+  "anti_tuning_rules": {
+    "freeze_neutral_corpus_before_final_execution": true,
+    "freeze_nemo_adapter_before_final_execution": true,
+    "freeze_provproxy_adapter_before_final_execution": true,
+    "do_not_retune_after_first_final_score": true,
+    "do_not_remove_failed_cases": true,
+    "do_not_replace_cases_after_results": true,
+    "do_not_change_category_definitions_after_results": true
+  },
+
+  "reporting_plan": {
+    "report_exact_nemo_version": true,
+    "report_exact_nemo_configuration": true,
+    "report_supported_and_unsupported_categories": true,
+    "report_all_failures": true,
+    "report_latency_tradeoffs": true,
+    "report_configuration_artifacts": true,
+    "label_comparison_as_external_framework validation": true
+  },
+
+  "success_definition": {
+    "predetermined_winner": false,
+    "fixed_required_detection_advantage": false,
+    "fixed_required_fpr_advantage": false,
+    "scientific_success": "A reproducible, version-pinned comparison that identifies where source-bound provenance provides incremental value, where the systems are comparable, and where their security objectives differ."
+  }
+}
