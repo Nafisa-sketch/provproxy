@@ -1,0 +1,73 @@
+﻿{
+  "experiment": "P14 external runtime-provenance comparison",
+  "status": "FIRST_COMPARISON_RESULTS_FROZEN",
+
+  "chronology": {
+    "protocol_commit": "a75a840",
+    "baseline_commit": "52260e1",
+    "result_commit": "7f88850",
+
+    "protocol_frozen_before_execution": true,
+    "external_baseline_frozen_before_execution": true,
+    "provproxy_b5_results_frozen_before_execution": true,
+    "evaluator_committed_before_execution": false,
+    "evaluator_modified_after_first_execution": false
+  },
+
+  "corpus": {
+    "source": "P11 frozen independent corpus",
+    "sha256": "2BB245B0CEDA6462253B3D25E7E76B6676FB91A6A4BA4B965EA3C8B35E8B63E4",
+    "cases": 1440,
+    "malicious": 800,
+    "benign": 640,
+    "unchanged_during_comparison": true
+  },
+
+  "external_baseline": {
+    "type": "runtime direct-snippet provenance",
+    "min_fragment_chars": 8,
+    "detection_rate": 0.815,
+    "false_positive_rate": 0.0,
+    "precision": 1.0,
+    "balanced_accuracy": 0.907
+  },
+
+  "provproxy_b5": {
+    "detection_rate": 0.8575,
+    "false_positive_rate": 0.0,
+    "precision": 1.0,
+    "balanced_accuracy": 0.92875
+  },
+
+  "paired_malicious": {
+    "baseline_miss_provproxy_hit": 54,
+    "baseline_hit_provproxy_miss": 20,
+    "mcnemar_p": 9.61298658237e-05
+  },
+
+  "paired_benign": {
+    "baseline_false_provproxy_clean": 0,
+    "baseline_clean_provproxy_false": 0,
+    "mcnemar_p": 1.0
+  },
+
+  "latency_tradeoff": {
+    "external_p50_ms": 0.248700,
+    "external_p95_ms": 0.282770,
+    "external_p99_ms": 0.310056,
+    "provproxy_p50_ms": 0.1675,
+    "provproxy_p95_ms": 0.969867,
+    "provproxy_p99_ms": 1.4985992,
+    "interpretation": "ProvProxy is faster at median latency but has heavier tail latency than the simpler external baseline."
+  },
+
+  "interpretation": "ProvProxy B5 achieved higher detection rate and balanced accuracy than the independently implemented runtime snippet-provenance baseline, with equal observed false-positive rate and precision. The paired malicious comparison favored ProvProxy significantly. Tail latency was higher for ProvProxy and must be reported as a trade-off.",
+
+  "reporting_constraints": {
+    "do_not_claim_universal_superiority": true,
+    "report_latency_tradeoff": true,
+    "report_evaluator_commit_chronology": true,
+    "do_not_retune_baseline_after_results": true,
+    "do_not_retune_provproxy_after_results": true
+  }
+}
