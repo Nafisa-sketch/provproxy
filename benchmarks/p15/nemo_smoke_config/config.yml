@@ -1,0 +1,15 @@
+﻿colang_version: "1.0"
+
+models:
+  - type: main
+    engine: openai
+    model: dummy-p15-model
+
+rails:
+  tool_output:
+    flows:
+      - tool call validation
+
+  tool_input:
+    flows:
+      - tool result validation
