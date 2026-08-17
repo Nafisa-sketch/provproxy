@@ -10,3 +10,6 @@ benchmarks/results/v*_runs.json
 .provproxy_state/
 p6_backup/
 non_existent_dummy.json
+
+# P15 isolated NeMo environment
+.venv-p15/
