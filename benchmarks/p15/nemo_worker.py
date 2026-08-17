@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import asyncio
 import json
@@ -40,8 +40,10 @@ DECLARED_TOOLS = [
 ]
 
 
-async def run_case(row: dict) -> dict:
-    adapter = NemoIORailsAdapter()
+async def run_case(
+    adapter: NemoIORailsAdapter,
+    row: dict,
+) -> dict:
 
     any_block = False
     reasons = []
@@ -79,10 +81,36 @@ async def run_case(row: dict) -> dict:
     }
 
 
+PREFIX = "P15_RESULT\\t"
+
+
+async def async_main() -> None:
+    adapter = NemoIORailsAdapter()
+
+    for line in sys.stdin:
+        if not line.strip():
+            continue
+
+        row = json.loads(line)
+
+        try:
+            result = await run_case(adapter, row)
+        except Exception as exc:
+            result = {
+                "case_id": row.get("case_id"),
+                "applicable": True,
+                "worker_error": type(exc).__name__,
+                "worker_error_message": str(exc),
+            }
+
+        print(
+            PREFIX + json.dumps(result, sort_keys=True),
+            flush=True,
+        )
+
+
 def main() -> None:
-    row = json.loads(sys.stdin.read())
-    result = asyncio.run(run_case(row))
-    print(json.dumps(result, sort_keys=True))
+    asyncio.run(async_main())
 
 
 if __name__ == "__main__":

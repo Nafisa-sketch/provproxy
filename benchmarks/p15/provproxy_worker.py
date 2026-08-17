@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import sys
@@ -59,9 +59,30 @@ def run_case(row: dict) -> dict:
     }
 
 
+PREFIX = "P15_RESULT\\t"
+
+
 def main() -> None:
-    row = json.loads(sys.stdin.read())
-    print(json.dumps(run_case(row), sort_keys=True))
+    for line in sys.stdin:
+        if not line.strip():
+            continue
+
+        row = json.loads(line)
+
+        try:
+            result = run_case(row)
+        except Exception as exc:
+            result = {
+                "case_id": row.get("case_id"),
+                "applicable": True,
+                "worker_error": type(exc).__name__,
+                "worker_error_message": str(exc),
+            }
+
+        print(
+            PREFIX + json.dumps(result, sort_keys=True),
+            flush=True,
+        )
 
 
 if __name__ == "__main__":
