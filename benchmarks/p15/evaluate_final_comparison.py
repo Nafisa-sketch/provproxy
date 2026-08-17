@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import csv
 import hashlib
@@ -574,7 +574,8 @@ def main() -> None:
     prov_results = run_worker(
         [
             sys.executable,
-            str(PROV_WORKER),
+            "-m",
+            "benchmarks.p15.provproxy_worker",
         ],
         shared_rows,
         len(shared_rows),
@@ -588,7 +589,8 @@ def main() -> None:
     nemo_results = run_worker(
         [
             str(NEMO_PYTHON),
-            str(NEMO_WORKER),
+            "-m",
+            "benchmarks.p15.nemo_worker",
         ],
         rows,
         len(rows),
