@@ -1,0 +1,9 @@
+mode,label,category,n,signal_rate,review_rate,containment_rate
+baseline,benign,cross_call_fragmentation,200,0.0,0.0,0.0
+baseline,benign,interleaved_cross_call_fragmentation,200,0.0,0.0,0.0
+baseline,malicious,cross_call_fragmentation,200,0.39,0.0,0.39
+baseline,malicious,interleaved_cross_call_fragmentation,200,0.44,0.0,0.44
+candidate,benign,cross_call_fragmentation,200,0.0,0.0,0.0
+candidate,benign,interleaved_cross_call_fragmentation,200,0.0,0.0,0.0
+candidate,malicious,cross_call_fragmentation,200,0.78,0.755,0.78
+candidate,malicious,interleaved_cross_call_fragmentation,200,0.79,0.79,0.79
