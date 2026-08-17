@@ -1,0 +1,47 @@
+{
+  "experiment": "P16 final candidate lock",
+  "version": "p16-candidate-v1",
+  "status": "LOCKED_AFTER_DEV_CALIBRATION_BEFORE_FINAL_HELDOUT_EXECUTION",
+
+  "source_dev_commit": "5f4b278",
+
+  "selected_candidate": {
+    "review_threshold": 0.25,
+    "hard_match_threshold": 0.60,
+    "hard_match_threshold_changed": false,
+    "fanout_review_threshold": 0.30,
+    "fanout_min_destinations": 2,
+    "window_seconds": 300,
+    "window_max_calls": 50
+  },
+
+  "development_evidence": {
+    "baseline_effective_containment_rate": 0.415,
+    "candidate_effective_containment_rate": 0.738,
+    "candidate_enforcement_false_positive_rate": 0.0,
+    "candidate_mean_pre_containment_exposure": 0.838
+  },
+
+  "selection_rule": [
+    "enforcement_false_positive_rate <= 0.01",
+    "maximize_effective_containment_rate",
+    "minimize_pre_containment_exposure",
+    "minimize_p95_latency",
+    "prefer_higher_review_threshold_if_still_tied"
+  ],
+
+  "final_heldout": {
+    "path": "benchmarks/p16/corpus/p16_final_heldout.jsonl",
+    "sha256": "D35A93AB2D48A44DC45F4E70211F00CFC8667ACD0DA965B3B92ED923D47F9BBE",
+    "cases": 800,
+    "executed_before_this_lock": false
+  },
+
+  "anti_tuning": {
+    "review_threshold_must_not_change_after_this_lock": true,
+    "hard_threshold_must_remain_0_60": true,
+    "heldout_cases_must_not_be_removed": true,
+    "heldout_labels_must_not_be_changed": true,
+    "negative_result_is_valid": true
+  }
+}
