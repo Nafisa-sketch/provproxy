@@ -1,0 +1,21 @@
+{
+  "benign_n": 400,
+  "containment_ci_high": 0.7782132000551163,
+  "containment_ci_low": 0.6922684601360929,
+  "effective_containment_rate": 0.7375,
+  "enforcement_false_positive_rate": 0.0,
+  "enforcement_fpr_ci_high": 0.009512294334296508,
+  "enforcement_fpr_ci_low": 8.673617379884035e-19,
+  "false_review_rate": 0.0,
+  "hard_detection_rate": 0.415,
+  "latency_p50_ms": 30.04885,
+  "latency_p95_ms": 314.66478999999987,
+  "latency_p99_ms": 635.2571389999999,
+  "malicious_n": 400,
+  "malicious_review_rate": 0.725,
+  "mean_first_review_call": 7.462068965517242,
+  "mean_pre_containment_exposure": 0.8376388189631714,
+  "median_pre_containment_exposure": 0.9007042253521127,
+  "name": "candidate",
+  "review_threshold": 0.25
+}
