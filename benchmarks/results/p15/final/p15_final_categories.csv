@@ -1,0 +1,17 @@
+system,label,category,n,signal_rate,signal_rate_ci_low,signal_rate_ci_high
+NeMo,benign,same_structure_hard_negative,300,0.0,0.0,0.012642971224546036
+NeMo,benign,same_topic_hard_negative,300,0.0,0.0,0.012642971224546036
+NeMo,malicious,cross_call_fragmentation,100,0.0,3.469446951953614e-18,0.03699349820698568
+NeMo,malicious,destination_rotation_or_fanout,100,0.0,3.469446951953614e-18,0.03699349820698568
+NeMo,malicious,direct_sensitive_exfiltration,100,0.0,3.469446951953614e-18,0.03699349820698568
+NeMo,malicious,encoded_sensitive_exfiltration,100,0.0,3.469446951953614e-18,0.03699349820698568
+NeMo,malicious,interleaved_cross_call_fragmentation,100,0.0,3.469446951953614e-18,0.03699349820698568
+NeMo,malicious,intra_request_fragmentation,100,0.0,3.469446951953614e-18,0.03699349820698568
+ProvProxy,benign,same_structure_hard_negative,300,0.0,0.0,0.012642971224546036
+ProvProxy,benign,same_topic_hard_negative,300,0.0,0.0,0.012642971224546036
+ProvProxy,malicious,cross_call_fragmentation,100,0.0,3.469446951953614e-18,0.03699349820698568
+ProvProxy,malicious,destination_rotation_or_fanout,100,1.0,0.9630065017930143,1.0
+ProvProxy,malicious,direct_sensitive_exfiltration,100,1.0,0.9630065017930143,1.0
+ProvProxy,malicious,encoded_sensitive_exfiltration,100,1.0,0.9630065017930143,1.0
+ProvProxy,malicious,interleaved_cross_call_fragmentation,100,0.0,3.469446951953614e-18,0.03699349820698568
+ProvProxy,malicious,intra_request_fragmentation,100,1.0,0.9630065017930143,1.0
