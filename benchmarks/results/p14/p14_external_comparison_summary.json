@@ -1,0 +1,258 @@
+{
+  "experiment": "P14 frozen external runtime-provenance comparison",
+  "status": "ONE_SHOT_COMPARISON",
+  "corpus": {
+    "sha256_before": "2BB245B0CEDA6462253B3D25E7E76B6676FB91A6A4BA4B965EA3C8B35E8B63E4",
+    "sha256_after": "2BB245B0CEDA6462253B3D25E7E76B6676FB91A6A4BA4B965EA3C8B35E8B63E4",
+    "hash_unchanged": true,
+    "total": 1440,
+    "malicious": 800,
+    "benign": 640
+  },
+  "external_baseline": {
+    "name": "runtime direct-snippet provenance baseline",
+    "min_fragment_chars": 8,
+    "metrics": {
+      "tp": 652,
+      "fn": 148,
+      "fp": 0,
+      "tn": 640,
+      "detection_rate": 0.815,
+      "detection_rate_ci95": [
+        0.7866096930224873,
+        0.8403796149679368
+      ],
+      "false_positive_rate": 0.0,
+      "false_positive_rate_ci95": [
+        0.0,
+        0.005966467005294152
+      ],
+      "precision": 1.0,
+      "specificity": 1.0,
+      "balanced_accuracy": 0.9075,
+      "f1": 0.8980716253443526
+    },
+    "latency": {
+      "samples": 3887,
+      "p50_ms": 0.2487,
+      "p95_ms": 0.28276999999999997,
+      "p99_ms": 0.31005599999999994,
+      "mean_ms": 0.22336596346797014,
+      "max_ms": 1.08
+    }
+  },
+  "provproxy": {
+    "configuration": "P11 B5 frozen",
+    "source": "benchmarks/results/p11/p11_frozen_results.jsonl",
+    "metrics": {
+      "tp": 686,
+      "fn": 114,
+      "fp": 0,
+      "tn": 640,
+      "detection_rate": 0.8575,
+      "detection_rate_ci95": [
+        0.8315662014027991,
+        0.8800169021101427
+      ],
+      "false_positive_rate": 0.0,
+      "false_positive_rate_ci95": [
+        0.0,
+        0.005966467005294152
+      ],
+      "precision": 1.0,
+      "specificity": 1.0,
+      "balanced_accuracy": 0.92875,
+      "f1": 0.9232839838492598
+    },
+    "frozen_latency": {
+      "raw_summary_row": {
+        "config": "B5",
+        "malicious_n": "800",
+        "benign_n": "640",
+        "hard_match_dr": "0.85375",
+        "security_signal_dr": "0.8575",
+        "containment_rate": "0.8575",
+        "benign_hard_match_fpr": "0.0",
+        "benign_review_fpr": "0.0",
+        "benign_signal_fpr": "0.0",
+        "benign_enforcement_fpr": "0.0",
+        "signal_precision": "1.0",
+        "signal_recall": "0.8575",
+        "signal_f1": "0.9232839838492598",
+        "latency_p50_ms": "0.1675",
+        "latency_p95_ms": "0.9698669999999999",
+        "latency_p99_ms": "1.4985991999999952"
+      },
+      "p50_ms": 0.1675,
+      "p95_ms": 0.9698669999999999,
+      "p99_ms": 1.4985991999999952
+    }
+  },
+  "paired_comparison": {
+    "malicious": {
+      "baseline_miss_provproxy_hit": 54,
+      "baseline_hit_provproxy_miss": 20,
+      "mcnemar_p": 9.612986582365393e-05
+    },
+    "benign": {
+      "baseline_false_provproxy_clean": 0,
+      "baseline_clean_provproxy_false": 0,
+      "mcnemar_p": 1.0
+    }
+  },
+  "category_results": [
+    {
+      "label": "benign",
+      "category": "approved_destination",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "common_substring",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "dummy_credentials",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "fragment_like_benign",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "legitimate_encoding",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "multi_tool_benign",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "same_structure_benign",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "benign",
+      "category": "semantic_similarity",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "cross_call_fragmented",
+      "n": 80,
+      "baseline_signal_rate": 1.0,
+      "provproxy_b5_signal_rate": 0.925,
+      "delta_provproxy_minus_baseline": -0.075
+    },
+    {
+      "label": "malicious",
+      "category": "destination_alias",
+      "n": 80,
+      "baseline_signal_rate": 1.0,
+      "provproxy_b5_signal_rate": 1.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "destination_rotation",
+      "n": 80,
+      "baseline_signal_rate": 1.0,
+      "provproxy_b5_signal_rate": 1.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "direct",
+      "n": 80,
+      "baseline_signal_rate": 1.0,
+      "provproxy_b5_signal_rate": 1.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "encoded",
+      "n": 80,
+      "baseline_signal_rate": 0.325,
+      "provproxy_b5_signal_rate": 1.0,
+      "delta_provproxy_minus_baseline": 0.675
+    },
+    {
+      "label": "malicious",
+      "category": "interleaved",
+      "n": 80,
+      "baseline_signal_rate": 1.0,
+      "provproxy_b5_signal_rate": 1.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "intra_request_fragmented",
+      "n": 80,
+      "baseline_signal_rate": 1.0,
+      "provproxy_b5_signal_rate": 1.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "multi_source",
+      "n": 80,
+      "baseline_signal_rate": 1.0,
+      "provproxy_b5_signal_rate": 1.0,
+      "delta_provproxy_minus_baseline": 0.0
+    },
+    {
+      "label": "malicious",
+      "category": "partial_exfiltration",
+      "n": 80,
+      "baseline_signal_rate": 0.825,
+      "provproxy_b5_signal_rate": 0.65,
+      "delta_provproxy_minus_baseline": -0.175
+    },
+    {
+      "label": "malicious",
+      "category": "semantic_reformulation",
+      "n": 80,
+      "baseline_signal_rate": 0.0,
+      "provproxy_b5_signal_rate": 0.0,
+      "delta_provproxy_minus_baseline": 0.0
+    }
+  ],
+  "fairness": {
+    "same_cases": true,
+    "same_ground_truth": true,
+    "provproxy_not_reexecuted": true,
+    "provproxy_results_frozen": true,
+    "baseline_frozen_before_execution": true,
+    "no_network_execution": true
+  },
+  "interpretation_constraint": "This comparison tests runtime source-to-sink provenance detection. It is not a claim of universal security-tool superiority."
+}
