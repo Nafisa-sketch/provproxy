@@ -1,0 +1,86 @@
+{
+  "experiment": "P16 cross-call provenance limitation follow-up",
+  "version": "p16-v1",
+  "status": "PROTOCOL_LOCKED_BEFORE_IMPLEMENTATION_AND_EVALUATION",
+
+  "motivation": {
+    "source": "Frozen P15 external comparison",
+    "p15_commit": "2ef3eb9",
+    "observed_limitation": {
+      "cross_call_fragmentation_detection_rate": 0.0,
+      "interleaved_cross_call_fragmentation_detection_rate": 0.0
+    },
+    "preserved_strengths": {
+      "direct_sensitive_exfiltration_detection_rate": 1.0,
+      "encoded_sensitive_exfiltration_detection_rate": 1.0,
+      "intra_request_fragmentation_detection_rate": 1.0,
+      "destination_rotation_or_fanout_detection_rate": 1.0,
+      "shared_benign_false_positive_rate": 0.0
+    }
+  },
+
+  "research_question": "Can a preregistered early cross-call review mechanism improve containment of fragmented sensitive-data propagation relative to frozen P15 ProvProxy while preserving low benign false-positive rates and acceptable latency?",
+
+  "baseline": {
+    "name": "Frozen P15 ProvProxy",
+    "commit": "2ef3eb9",
+    "modify": false,
+    "retune": false
+  },
+
+  "candidate": {
+    "name": "P16 early cross-call review variant",
+    "hard_match_threshold": 0.6,
+    "hard_match_threshold_must_remain_unchanged": true,
+    "mechanism": "Separate early-review threshold on cumulative source-bound cross-call evidence",
+    "review_is_not_hard_match": true,
+    "fail_closed_when_review_cannot_be_resolved": true
+  },
+
+  "design_constraints": {
+    "do_not_modify_p15_results": true,
+    "do_not_modify_p15_corpus": true,
+    "do_not_lower_hard_detection_threshold": true,
+    "do_not_relabel_review_as_hard_match": true,
+    "do_not_select_threshold_using_final_test_results": true,
+    "do_not_remove_failed_cases": true,
+    "do_not_hide_pre_containment_leakage": true
+  },
+
+  "evaluation": {
+    "primary_categories": [
+      "cross_call_fragmentation",
+      "interleaved_cross_call_fragmentation"
+    ],
+    "negative_controls": [
+      "same_topic_hard_negative",
+      "same_structure_hard_negative",
+      "benign_interleaved_workflow"
+    ],
+    "report": [
+      "hard_detection_rate",
+      "review_rate",
+      "effective_containment_rate",
+      "false_review_rate",
+      "enforcement_false_positive_rate",
+      "pre_containment_exposure_fraction",
+      "first_review_call",
+      "p50_latency_ms",
+      "p95_latency_ms",
+      "p99_latency_ms"
+    ]
+  },
+
+  "anti_tuning": {
+    "separate_development_and_final_test_sets": true,
+    "freeze_final_test_set_before_candidate_execution": true,
+    "freeze_candidate_configuration_before_final_test_execution": true,
+    "one_final_locked evaluation": true
+  },
+
+  "success_definition": {
+    "predetermined_winner": false,
+    "required_100_percent_detection": false,
+    "scientific_success": "Quantify whether early source-bound cross-call review reduces the P15 fragmentation blind spot, including any false-positive, latency, and pre-containment leakage costs."
+  }
+}
